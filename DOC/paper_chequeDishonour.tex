@@ -1,0 +1,77 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[english]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage[parfill]{parskip}
+\usepackage{appendix}
+\usepackage{amsmath}
+
+\usepackage{url}
+\usepackage[hidelinks,breaklinks]{hyperref}
+\usepackage{cleveref}
+
+\usepackage[backend=biber,url=false,style=authoryear,sorting=nyt,bibstyle=numeric]{biblatex}
+\addbibresource{chequeBounce.bib}
+
+\usepackage[acronym,nonumberlist,toc,nomain]{glossaries}
+\makeglossaries
+\loadglsentries{acronyms.tex}
+
+\title{Characterising cheque dishonour cases in India: Causes for delays, and policy implications}
+\author{Devendra Damle\thanks{Devendra Damle is a researcher at National Institute of Public Finance and Policy.} and Jitender Madaan\thanks{Jitender Madaan is a professor at Indian Institute of Technology, Delhi.} and Karan Gulati\thanks{Karan Gulati is a researcher at National Institute of Public Finance and Policy.}\\ and Manish Kumar Singh\thanks{Manish Kumar Singh is a professor at Indian Institute of Technology, Rourkee.} and Nikhil Borwankar\thanks{Nikhil Borwankar is a practicing advocate.}}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+  \huge \centering (TO DO)
+\end{abstract}
+
+\newpage
+\tableofcontents
+\newpage
+\printglossaries
+\newpage
+
+\section*{Acknowledgements}
+The authors would like to thank the DAKSH Centre of Excellence for Law and Technology for their support. The authors are grateful to thank Sandhya R and Surya Prakash BS (both from DAKSH) for their extensive feedback on the study. The authors would also like to thank Manaswini Rao (Professor of Economics, University of California San Diego) and Pramod Rao (Group General Counsel, ICICI Group) for reviewing the study and their inputs.
+
+\newpage
+\section{Introduction}
+\label{sec:introduction}
+\input{introduction}
+
+\section{Methodology}
+\label{sec:methodology}
+\input{methodology}
+
+\section{Results and discussion}
+\label{sec:results}
+\input{results}
+
+\section{Conclusion}
+\label{sec:conclusion}
+\input{conclusion}
+
+\newpage
+\printbibliography[heading=bibintoc]
+\newpage
+
+\appendix
+\section{Appendices}
+\label{sec:appendices}
+\input{appendices}
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
