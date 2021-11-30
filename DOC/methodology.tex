@@ -1,15 +1,74 @@
 \subsection{Data description}
 \label{sec:data-description}
-\begin{enumerate}
-\item How was the sample selected
-\item Sample size and summary
-\end{enumerate}
+State selection based on an initial sample check of 100,000 cases.
+\begin{itemize}
+\item Remove States where we were unable to download sample data (this is because of data quality of the e-courts database);
+\item Remove States that do not classify any cases as relating to the Negotiable Instruments Act;
+\item Remove States where < 2\% of the final orders (as a proportion of total NI cases) are machine readable and in English.
+\end{itemize}
+
+Sample description:
+\begin{itemize}
+\item We attempted to collect a random sample of 5,00,000 cases from
+  10 States and Union Territories filed between 2014/01/01 and
+  2018/12/31. We were able to successfully get data for 4,68,855
+  cases.
+\item We removed cases from District and Sessions courts, since we are
+  only interested in original matters. After this filter we are left
+  with 3,63,762 cases
+\item First, we used regular expressions to check whether the ``Act
+  Name'' field references the NI Act.
+\item Then, we used regular expressions to search for references to
+  the NI Act in the texts of the interim orders and final orders,
+  where available.
+\item Using the aforementioned method, we got a total of 48,191 NI Act
+  cases, out of these 10,693 are pending cases and 37,498 are disposed
+\end{itemize}
+
+\begin{longtable}{@{}lrrrr@{}}
+\caption{Sample description}
+\label{tab:sample_desc}\\
+\toprule
+\textbf{State} & \textbf{NI Act cases} & \textbf{\%NI Act cases} & \textbf{Non-NI Act cases} & \textbf{Total cases}\\* \midrule
+\endhead
+Andhra Pradesh & 2640 & 12.4 & 18567 & 21207\\
+Chandigarh & 731 & 34.9 & 1364 & 2095\\
+Delhi & 5211 & 26.1 & 14742 & 19953\\
+Goa & 399 & 12.8 & 2713 & 3112\\
+Gujarat & 6756 & 12.0 & 49476 & 56232\\
+Haryana & 5326 & 13.7 & 33542 & 38868\\
+Himachal Pradesh & 1166 & 8.9 & 11948 & 13114\\
+Karnataka & 11195 & 12.9 & 75807 & 87002\\
+Maharashtra & 8880 & 9.7 & 82673 & 91553\\
+Punjab & 5887 & 19.2 & 24739 & 30626\\
+\textbf{Total} & \textbf{48191} & \textbf{13.2} & \textbf{315571} & \textbf{363762}\\* \bottomrule
+\end{longtable}
 
 \subsection{Approach to analysis}
 \label{sec:approach-analysis}
 
 \subsubsection{Text-mining}
 \label{sec:text-mining}
+
+\begin{longtable}{@{}lrrrrrr@{}}
+\caption{Number of cases in which we were able to identify characteristics of interest}
+\label{tab:case_chars}\\
+\textbf{State} & \textbf{Non Appearance} & \textbf{Summons Trial} & \textbf{Mediation} & \textbf{Jurisdiction Issue} & \textbf{Multiplicity} & \textbf{Total} \\
+\endhead
+Andhra Pradesh & 1674 & 814 & 260 & 210 & 124 & 2640 \\
+Chandigarh & 701 & 408 & 204 & 278 & 53 & 731 \\
+Delhi & 2062 & 1359 & 1026 & 1045 & 208 & 5211 \\
+Goa & 381 & 78 & 90 & 33 & 18 & 399 \\
+Gujarat & 5125 & 391 & 402 & 3059 & 107 & 6756 \\
+Haryana & 5214 & 3376 & 1731 & 2109 & 540 & 5326 \\
+Himachal Pradesh & 864 & 351 & 506 & 299 & 33 & 1166 \\
+Karnataka & 5850 & 2002 & 1846 & 953 & 410 & 11195 \\
+Maharashtra & 5933 & 963 & 2546 & 3831 & 135 & 8880 \\
+Punjab & 5821 & 3134 & 2100 & 2281 & 382 & 5887 \\
+\textbf{Total} & \textbf{33625} & \textbf{12876} & \textbf{10711} & \textbf{14098} & \textbf{2010} & \textbf{48191}
+\end{longtable}
+
+Explain that this is likely an underestimate because orders cannot be parsed in approx 36\% of the cases.
 
 \subsubsection{Regression model specifications}
 \label{sec:model-selection}
