@@ -1,4 +1,4 @@
-\documentclass[11pt,a4paper]{article}
+\documentclass[12pt,a4paper]{article}
 
 \usepackage[english]{babel}
 \usepackage[T1]{fontenc}
@@ -12,6 +12,8 @@
 \usepackage[parfill]{parskip}
 \usepackage{appendix}
 \usepackage{amsmath}
+\usepackage{fnpos}
+\usepackage{geometry}
 
 \usepackage{url}
 \usepackage[hidelinks,breaklinks]{hyperref}
@@ -20,18 +22,32 @@
 \usepackage[backend=biber,url=false,style=authoryear,sorting=nyt,bibstyle=numeric]{biblatex}
 \addbibresource{chequeBounce.bib}
 
+\AtBeginEnvironment{quote}{\smaller}
+\makeFNbottom
+\geometry{margin=1in}
+\renewcommand{\baselinestretch}{1.25}
+\setlength{\parskip}{1em}
+\setlist{nosep}
+
+\newcommand{\floattabu}[1]{
+\vspace*{0.2in}
+{\footnotesize
+#1
+}
+\vspace*{0.2in}}
+
 \usepackage[acronym,nonumberlist,toc,nomain]{glossaries}
 \makeglossaries
 \loadglsentries{acronyms.tex}
 
-\title{Characterising cheque dishonour cases in India: Causes for delays, and policy implications}
+\title{Characterising cheque dishonour cases in India: Causes for delays and policy implications}
 \author{Devendra Damle\thanks{Devendra Damle is a researcher at National Institute of Public Finance and Policy.} and Jitender Madaan\thanks{Jitender Madaan is a professor at Indian Institute of Technology, Delhi.} and Karan Gulati\thanks{Karan Gulati is a researcher at National Institute of Public Finance and Policy.}\\ and Manish Kumar Singh\thanks{Manish Kumar Singh is a professor at Indian Institute of Technology, Rourkee.} and Nikhil Borwankar\thanks{Nikhil Borwankar is a practicing advocate.}}
 
 \begin{document}
 \maketitle
 
 \begin{abstract}
-  \huge \centering (TO DO)
+
 \end{abstract}
 
 \newpage
