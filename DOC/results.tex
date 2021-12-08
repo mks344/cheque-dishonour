@@ -1,14 +1,20 @@
-Determinants of case duration in NI Act cases, their incidence and impact
-\begin{enumerate}
-\item Accused absconding
-\item Duration and outcome of mediation
-\item Summary trial being converted to summons trial
-\item Incidence of summary trial being converted to summons trial
-  before assessing whether accused has a plausible defence
-\item Wrong jurisdiction
-\item Multiple cheques bounced in the same transaction
-\end{enumerate}
+% Determinants of case duration in NI Act cases, their incidence and impact
+% \begin{enumerate}
+% \item Accused absconding
+% \item Duration and outcome of mediation
+% \item Summary trial being converted to summons trial
+% \item Incidence of summary trial being converted to summons trial
+%   before assessing whether accused has a plausible defence
+% \item Wrong jurisdiction
+% \item Multiple cheques bounced in the same transaction
+% \end{enumerate}
 
+\subsection{Determinants of total duration}
+\label{sec:determ-total-durat}
+
+Table \ref{tab:duration_reg} shows the effect of case-characteristics on the duration of the case (in days). The state in which the case is filed has a large and statistically significant effect on the duration of the case. % Cases in Delhi appear to take longer than cases in other states. Haryana, Punjab, Chandigarh and Gujarat appear to dispose cases faster than the other states and
+% \glspl{ut}.
+Controlling for the state-level effects, all but one of the selected case characteristics viz. --- non-appearance of accused, case being converted to a summons trial, reference to mediation, jurisdictional issues, and multiplicity of proceedings --- significantly increase the duration of the case. Cases which are contested, appear to take fewer days to dispose than cases which are uncontested. Notably, cases which are referred to mediation take longer to dispose than cases which are not referred to mediation. This is runs counter to our hypothesis that cases which are referred to mediation take less time to dispose. This also means that the recommendation by the Amicus Curiae, calling for more cases to be referred to mediation, will not reduce the delays in cheque-dishonour cases, in fact they will increase the delays, by 108 days (all else being equal).
 
 \begin{longtable}{@{}lllllll@{}}
 \caption{Impact of case characteristics on case duration (in days)}
@@ -46,16 +52,12 @@ Log-Likelihood & -2.7359e+05 & & & & & \\
 \bottomrule
 \end{longtable}
 
-\begin{itemize}
-\item Non appearance and jurisdiction issues can add more than 200
-  days to the duration. 
-\item Getting referred to mediation, conversion to
-  summons trials and multiplicity can add more than 100 days to the
-  duration. 
-\item Cases that are contested, however, seem to take approx 40
-  days less than the rest. This finding is unexpected.
-\end{itemize}
+\subsection{Determinants of the number of hearings to dispose}
+\label{sec:determ-numb-hear}
 
+Table \ref{tab:hearings_reg} shows the effect of case-characteristics on the number of hearings required to dispose the case. The state in which the case is filed has a large and statistically significant effect on the number of hearings. Controlling for the state-level effects, all of the selected case characteristics viz. --- non-appearance of accused, case being converted to a summons trial, reference to mediation, jurisdictional issues, and multiplicity of proceedings --- significantly increase the number of hearings required to dispose the case. Notably, cases which are referred to mediation take more hearings to dispose than cases which are not referred to mediation. This is runs counter to our hypothesis that cases which are referred to mediation take fewer hearings to dispose. Read with the finding on duration, it means cases referred to mediation not only take longer to dispose, but they also do not reduce the amount of time the court has to allocate to them. This also means that the recommendation by the Amicus Curiae, calling for more cases to be referred to mediation, will not increase the time available for hearing other matters. This points to some fundamental issues in the court-ordered mediation process, and in the functioning of mediation and concilliation forums such as Lok Adalats.
+
+Another notable finding is that cases which are contested take more hearings to dispose. Read with the earlier finding contested cases, it means the courts are efficient at disposing cases when both parties participate in the proceedings. It also indicates that when the parties contest, the court schedules successive hearings in shorter time than when the matter is uncontested.
 
 \begin{longtable}{@{}lllllll@{}}
 \caption{Impact of case characteristics on number of hearings to dispose}
@@ -83,7 +85,7 @@ charSummons & 7.1786 & 0.133 & 54.060 & 0.000 & 6.918 & 7.439 \\
 charMediation & 3.2714 & 0.128 & 25.552 & 0.000 & 3.020 & 3.522 \\
 charJurisdiction & 5.6611 & 0.127 & 44.530 & 0.000 & 5.412 & 5.910 \\
 charMultipleCheques & 9.9920 & 0.257 & 38.928 & 0.000 & 9.489 & 10.495 \\
-contested & 2.8939 & 0.135 & 21.364 & 0.000 & 2.628 & 3.159
+contested & 2.8939 & 0.135 & 21.364 & 0.000 & 2.628 & 3.159\\
 \bottomrule
 No. Observations & 37175 & & & & &\\
 R-squared & 0.373 & & & & & \\
@@ -93,20 +95,6 @@ F-statistic & 1163 & & & & & \\
 Log-Likelihood & -1.3767e+05 & & & & & \\
 \bottomrule
 \end{longtable}
-
-\begin{itemize}
-\item Cases with non appearance and conversion to summons trials need
-  approx 7 more hearings to dispose than the rest 
-\item Cases which get
-  referred to mediation take 3 more hearings than the rest 
-\item Cases with
-  jurisdictional issues take 5 hearings more than the rest 
-\item Cases with
-  multiplicity of offences can take more than 9 hearings extra 
-\item Cases
-  that are contested, however, seem to take 2-3 hearings more to
-  dispose than uncontested cases
-\end{itemize}
 
 %%% Local Variables:
 %%% mode: latex

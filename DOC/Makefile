@@ -1,5 +1,5 @@
 clean:
-	rm -f $$(ls *.* | grep -v '\.pdf\|\.tex\|\.md')
+	rm -f $$(ls *.* | grep -v '\.pdf\|\.tex\|\.md\|\.bib')
 	rm -rf auto
 
 squeaky:
