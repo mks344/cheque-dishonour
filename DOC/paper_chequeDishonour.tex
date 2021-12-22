@@ -15,12 +15,17 @@
 \usepackage{amsmath}
 \usepackage{fnpos}
 
-\usepackage{url}
-\usepackage[hidelinks,breaklinks]{hyperref}
-\usepackage{cleveref}
+\usepackage[hyphens]{url}
 
 \usepackage[backend=biber,url=false,style=authoryear,sorting=nyt,bibstyle=numeric]{biblatex}
-\addbibresource{cheque.bib}
+\addbibresource{chequeBounce.bib}
+
+\usepackage[acronym,nonumberlist,nomain]{glossaries}
+\makeglossary
+\loadglsentries{acronyms.tex}
+
+\usepackage[hidelinks,breaklinks]{hyperref}
+\usepackage{cleveref}
 
 \AtBeginEnvironment{quote}{\smaller}
 \makeFNbottom
@@ -36,10 +41,6 @@
 }
 \vspace*{0.2in}}
 
-\usepackage[acronym,nonumberlist,toc,nomain]{glossaries}
-\makeglossaries
-\loadglsentries{acronyms.tex}
-
 \title{Characterising cheque dishonour cases in India: Causes for delays and policy implications}
 \author{Devendra Damle\thanks{Devendra Damle is a researcher at National Institute of Public Finance and Policy.} and Jitender Madaan\thanks{Jitender Madaan is a professor at Indian Institute of Technology, Delhi.} and Karan Gulati\thanks{Karan Gulati is a researcher at National Institute of Public Finance and Policy.}\\ and Manish Kumar Singh\thanks{Manish Kumar Singh is a professor at Indian Institute of Technology, Rourkee.} and Nikhil Borwankar\thanks{Nikhil Borwankar is a practicing advocate.}}
 
@@ -47,7 +48,7 @@
 \maketitle
 
 \begin{abstract}
-
+TO DO
 \end{abstract}
 
 \newpage

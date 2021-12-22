@@ -9,7 +9,7 @@ We first drew a random sample of 100,000 cases filed between 2014/01/01 and 2018
 
 Based on the aforementioned criteria, of the 29 states (including Jammu and Kashmir) and 7 \glspl{ut}, we dropped 21 states and 5 \glspl{ut}. Our final sample covers 8 states and 2 Union Territories, shown in Table \ref{tab:sample_desc}. For these 10 states and \glspl{ut}, we drew a random sample of 500,000 cases from the Development Data Labs database.\footcite{devdatalabs2021_eCourtsData} We then attempted to download case details for these 500,000 cases filed between 2014/01/01 and 2018/12/31. We were able to successfully download case-details for 4,68,855 cases. We removed cases from District and Sessions courts, since these courts hear appeals, and we are only interested in original matters. This gave us a sample of 3,63,762 cases. As with the preliminary analysis, we used pattern-matching based on regular expressions to identify cases related to \gls{ni}. In total, our sample has 48,191 \gls{ni} cases, out of these 10,693 are pending cases and 37,498 are disposed. Table \ref{tab:sample_desc} shows a summary of the sample. Our data shows that check-dishonour cases in India represent approximately 13.2\% of all cases in the courts (pending+disposed).
 
-\begin{longtable}{@{}lrrrr@{}}
+{\footnotesize \begin{longtable}{@{}lrrrr@{}}
 \caption{Sample description}
 \label{tab:sample_desc}\\
 \toprule
@@ -27,6 +27,7 @@ Maharashtra & 8880 & 9.7 & 82673 & 91553\\
 Punjab & 5887 & 19.2 & 24739 & 30626\\
 \textbf{Total} & \textbf{48191} & \textbf{13.2} & \textbf{315571} & \textbf{363762}\\ \bottomrule
 \end{longtable}
+}
 
 \subsection{Approach to analysis}
 \label{sec:approach-analysis}
@@ -93,12 +94,15 @@ converted to a summons trial it is marked as 1. Otherwise, it is
 marked as 0. Table \ref{tab:case_chars} shows the state-wise number of
 cases in which we were able to identify characteristics of interest.
 
-\begin{longtable}{@{}lrrrrrr@{}}
-  \caption{Number of cases in which we were able to identify
-    characteristics of interest}
+{\footnotesize \centering
+  \begin{longtable}{@{}lrrrrrr@{}}
+  \caption{\mbox{Number of cases in which we were able to identify
+    characteristics of interest}}
   \label{tab:case_chars}\\
   \toprule
-  \textbf{State} & \textbf{Non Appearance} & \textbf{Summons Trial} & \textbf{Mediation} & \textbf{Jurisdiction Issue} & \textbf{Multiplicity} & \textbf{Total} \\
+  \textbf{State} & \textbf{Non} & \textbf{Summons} & \textbf{Mediation} & \textbf{Jurisdiction} & \textbf{Multiplicity} & \textbf{Total} \\
+   & \textbf{Appearance} & \textbf{Trial} & & \textbf{Issue} & & \\
+  \midrule
   \endhead
   Andhra Pradesh & 1674 & 814 & 260 & 210 & 124 & 2640 \\
   Chandigarh & 701 & 408 & 204 & 278 & 53 & 731 \\
@@ -110,9 +114,11 @@ cases in which we were able to identify characteristics of interest.
   Karnataka & 5850 & 2002 & 1846 & 953 & 410 & 11195 \\
   Maharashtra & 5933 & 963 & 2546 & 3831 & 135 & 8880 \\
   Punjab & 5821 & 3134 & 2100 & 2281 & 382 & 5887 \\
+  \midrule
   \textbf{Total} & \textbf{33625} & \textbf{12876} & \textbf{10711} &
   \textbf{14098} & \textbf{2010} & \textbf{48191}\\\bottomrule
 \end{longtable}
+}
 
 It must be noted that this is likely an underestimate because orders cannot be parsed in approximately 36\% of the cases. Further, some courts do not properly record details of the purpose of hearings and the nature of disposal. Cases in which information regarding these characteristics could not be found were marked as not having those particular characteristics. In our manual check of approximately 500 cases, we did not find any false positives or false negatives, however, the aforementioned data limitation also limits our ability to reliably check for false negatives. This in turn means there could be many more cases which have the aforementioned characteristics but could not be identified as having them.
 
