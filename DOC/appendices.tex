@@ -1,3 +1,53 @@
+\section{Understanding \S~138 of the Negotiable Instruments Act} \label{app:understanding}
+
+As per \S~138 of the Negotiable Instruments Act, 1881, if a cheque (drawn by a person for paying off a debt or a liability) is returned unpaid due to insufficiency of funds or credit, the payer may be imprisoned for up to two years or with a fine up to twice the amount of the cheque, or both.\footcite[A \textit{cheque} is defined as per \S~6 of the NI Act. It is a bill of exchange drawn on a specified banker and not expressed to be payable otherwise than on-demand. It includes the electronic image of a truncated cheque and a cheque in electronic form. Once a cheque has been signed and issued in favour of the holder of the cheque, there is a statutory presumption \S~139 of NI Act that the cheque is issued in discharge of a legally enforceable debt or liability. However, said presumption is a rebuttable one. The issuer of the cheque can rebut that presumption by adducing credible evidence that the cheque was issued for some other purpose like security for a loan.][]{sc2018_murugun} However, this is only the case when: (i) the payee presents the cheque within six months of its issuance, (ii) demand for the payment within thirty days of the return of the cheque by the bank, and (iii) the payer fails to pay within fifteen days of the receipt of such notice. The cause of action arises after these fifteen days. The payee subsequently has one month to file a complaint before the appropriate court.
+
+An offence within the contemplation of \S~138 is complete with the dishonour of the cheque, but taking cognisance of the same by any court is forbidden so long as the complainant does not have the cause of action to file a complaint.\footcite{sc2014_dashrath} This is because the legislature has considered it appropriate to allow the drawer of a dishonoured cheque to pay up the amount before permitting her prosecution. The accused has a right to pay the money within fifteen days from the date of the service of notice, and only when she fails to pay is it open for the complainant to file a complaint. Thus, in \citetitle{sc2002_shakti}, where a complaint failed to mention that notice had been served, the same was not maintainable.\footcite{sc2002_shakti}
+
+A complainant may approach the concerned court within one month of the time provided to the payer to satisfy his debt or liability. After an amendment in 2015, the Act has been modified to prescribe that the territorial jurisdiction for filing of a cheque dishonour complaint shall be restricted to the court within whose territorial jurisdiction the offence is committed, i.e., which is the location where the cheque is dishonoured or returned unpaid by the bank on which it is drawn. Place of issuance or delivery of the statutory notice or where the complainant chooses to present the cheque for encashment by his bank is relevant for determining territorial jurisdiction for filing cheque dishonour complaints.
+
+Once a complaint is led in court, the court takes cognisance and issues the process for producing the accused. If the accused fails to appear, the court may issue a suitable warrant to ensure the same. As per \S~143 of the Act, cases are meant to be tried summarily. However, if the court believes that the nature of the matter is such that a sentence of imprisonment for a term exceeding one year may have to be passed or that it is, for any other reason, undesirable to try the case summarily, it may record such an order and hear the cases as a summons trial.\footnote{In case of a summary trial, if the accused pleads not guilty, the magistrate may record the substance of the evidence and deliver a judgment. However, in a summons trial, the proceeding is as any ordinary matter followed by a judgment.}
+
+Notably, the Supreme Court has observed that for the offence \S~138, the compensatory aspect of the remedy should be prioritised over the punitive aspect.\footcite{sc2010_damodar} Waiver of imprisonment instead of payment of additional compensation is permissible under exceptional circumstances.\footcite{sc2018_priyanka} The court may close proceedings if the accused deposits the amount assessed by it regarding the cheque amount, interest/costs, etc., within the stipulated period. Compounding at the initial stage and even at a later stage is acceptable.\footcite{sc2018_meters}
+
+For brevity, \cref{fig:proceeding_138} demonstrates the course of a proceeding in the case of a cheque dishonour.
+
+\begin{figure}[ht]
+\caption{Proceeding \S~138 of the Negotiable Instruments Act}
+\label{fig:proceeding_138}
+\vspace*{0.5cm}
+\centering 
+\begin{tikzpicture}[node distance= 1cm, text width=2.5cm]
+\node (in0) [note] {};
+\node (in1) [main, fill=red!30, below = 0.5cm of in0, yshift = 0.8cm] {Dishonour};
+\node (in2) [process, below = 0.5cm of in1] {Demand payment};
+\node (in3) [process, below = 0.5cm of in2, xshift = -3cm] {Does not pay};
+\node (in4) [main, fill=red!30, below = 0.5cm of in2, xshift = 3cm] {Pays};
+\node (in5) [process, below = 0.5cm of in3]{Court proceedings};
+\node (in6) [process, below = 0.5cm of in5, xshift = -3cm] {Accused not present};
+\node (in7) [process, below = 0.5cm of in6] {Warrant};
+\node (in8) [process, below = 1.9cm of in5, xshift = 3cm] {Present};
+\node (in9) [process, below = 0.5cm of in8, xshift = -3cm] {Summary proceeding};
+\node (in10) [process, below = 0.5cm of in8, xshift = 3cm] {Summons proceeding};
+\node (in11) [process, below = 0.5cm of in10] {Trial};
+\node (in12) [main, fill=red!30, below = 0.5cm of in11] {Judgement};
+
+\draw [arrow] (in1) -- (in2);
+\draw [arrow] (in2) -| (in3);
+\draw [arrow] (in2) -| (in4);
+\draw [arrow] (in3) -- (in5);
+\draw [arrow] (in5) -| (in6);
+\draw [arrow] (in5) -| (in8);
+\draw [arrow] (in6) -- (in7);
+\draw [arrow] (in7) -- (in8);
+\draw [arrow] (in8) |- (in9);
+\draw [arrow] (in8) |- (in10);
+\draw [arrow] (in10) -- (in11);
+\draw [arrow] (in11) -- (in12);
+\draw [arrow] (in9) |- (in12);
+
+\end{tikzpicture}
+\end{figure}
 
 %%% Local Variables:
 %%% mode: latex
