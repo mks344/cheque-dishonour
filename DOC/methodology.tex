@@ -1,13 +1,14 @@
 \subsection{Data description}
 \label{sec:data-description}
-We first drew a random sample of 100,000 cases filed between 2014/01/01 and 2018/12/31 across India from the database published by Development Data Lab.\footcite{devdatalabs2021_eCourtsData} We then attempted to download the case-details for these 100,000 cases from the eCourts database. We were able to download case-details for approximately 89,000 cases. We then used regular expressions to check whether the ``Act Name'' field references the \gls{ni}. Then, we used regular expressions to search for references to the \gls{ni} in the texts of the interim orders and final orders, where available. We tagged the cases we found through this protocol as being related to \gls{ni}. Data availability and quality varies greatly across states. Consequently, we could not include all the states of India in our study. We identified the states to exclude from the study based on the following criteria:
+We first drew a random sample of 100,000 cases filed between 2014/01/01 and 2018/12/31 across India from the database published by Development Data Lab.\footcite{devdatalabs2021_eCourtsData} We then attempted to download the case-details for these 100,000 cases from the eCourts database. We were able to download case-details for approximately 89,000 cases. We used regular expressions to check whether the ``Act Name'' field references the \gls{ni}. Then, we used regular expressions to search for references to the \gls{ni} in the interim and final order texts, where available. We tagged the cases we found through this protocol as related to the \gls{ni}. Data availability and quality vary greatly across states. Consequently, we could not include all the states of India in our study. We identified the states to exclude from the study based on the following criteria:
+
 \begin{itemize}
-\item States/\glspl{ut} where we were unable to download sample data (this is because of data quality of the e-courts database);
-\item States/\glspl{ut} that do not classify any cases as relating to the Negotiable Instruments Act;
-\item States/\glspl{ut} where < 2\% of the final orders (as a proportion of total NI cases) are machine readable and in English.
+\item States/Union Territories where we were unable to download sample data (this is because of data quality of the e-courts database);
+\item States/Union Territories that do not classify any cases as relating to the Negotiable Instruments Act;
+\item States/Union Territories where < 2\% of the final orders (as a proportion of total NI cases) are machine-readable and in English.
 \end{itemize}
 
-Based on the aforementioned criteria, of the 29 states (including Jammu and Kashmir) and 7 \glspl{ut}, we dropped 21 states and 5 \glspl{ut}. Our final sample covers 8 states and 2 Union Territories, shown in Table \ref{tab:sample_desc}. For these 10 states and \glspl{ut}, we drew a random sample of 500,000 cases from the Development Data Labs database.\footcite{devdatalabs2021_eCourtsData} We then attempted to download case details for these 500,000 cases filed between 2014/01/01 and 2018/12/31. We were able to successfully download case-details for 4,68,855 cases. We removed cases from District and Sessions courts, since these courts hear appeals, and we are only interested in original matters. This gave us a sample of 3,63,762 cases. As with the preliminary analysis, we used pattern-matching based on regular expressions to identify cases related to \gls{ni}. In total, our sample has 48,191 \gls{ni} cases, out of these 10,693 are pending cases and 37,498 are disposed. Table \ref{tab:sample_desc} shows a summary of the sample. Our data shows that check-dishonour cases in India represent approximately 13.2\% of all cases in the courts (pending+disposed).
+Based on the aforementioned criteria, of the 29 states (including Jammu and Kashmir) and 7 Union Territories, we dropped 21 states and 5 Union Territories. Our final sample covers 8 states and 2 Union Territories, shown in Table \ref{tab:sample_desc}. For these 10 states and Union Territories, we drew a random sample of 500,000 cases from the Development Data Labs database.\footcite{devdatalabs2021_eCourtsData} We then attempted to download case details for these 500,000 cases filed between 2014/01/01 and 2018/12/31. We were able to successfully download case-details for 4,68,855 cases. We removed cases from District and Sessions courts since these courts hear appeals, and we are only interested in original matters. This gave us a sample of 3,63,762 cases. As with the preliminary analysis, we used pattern-matching based on regular expressions to identify cases related to \gls{ni}. In total, our sample has 48,191 \gls{ni} cases. Out of these, 10,693 are pending cases and 37,498 are disposed. Table \ref{tab:sample_desc} shows a summary of the sample. Our data shows that check-dishonour cases in India represent approximately 13.2\% of all court cases (pending+disposed).
 
 {\footnotesize \begin{longtable}{@{}lrrrr@{}}
 \caption{Sample description}
@@ -32,65 +33,56 @@ Punjab & 5887 & 19.2 & 24739 & 30626\\
 \subsection{Approach to analysis}
 \label{sec:approach-analysis}
 
-Our objective is two-fold, to examine whether the interventions proposed by the Amicus Curiae are likely to have an effect on the duration of cheque-dishonour cases, and if so what is the magnitude of the effect. To that end, we first identified cases that had specific characteristics which are thought to increase the duration of a cheque-dishonour case. We then used a fixed-effects regression model to estimate the size of the effect of each of these characteristics on the total duration of the case. For the empirical analysis, we only used the 37,498 disposed cases.
+Our objective is two-fold, to examine whether the interventions proposed by the Amicus Curiae are likely to affect the duration of cheque-dishonour cases, and if so what is the magnitude of the effect. To that end, we first identified cases with specific characteristics that are thought to increase the duration of a cheque-dishonour case. We then used a fixed-effects regression model to estimate the size of the effect of each of these characteristics on the total duration of the case. For the empirical analysis, we only used the 37,498 disposed cases.
 
 \subsubsection{Text-mining}
 \label{sec:text-mining}
 
-We used pattern-matching based on regular expressions on the texts of
-the interim and final orders for each case to identify cases with the
-characteristics of interest. We supplemented this with the information
-reported in the purpose of hearings and nature of disposal. The
-characteristics and the strategy to identify whether it applies to a
-given cases are as follows:
+We used pattern-matching based on regular expressions on the texts of the interim and final orders for each case to identify cases with the characteristics of interest. We supplemented this with the information reported in the purpose of hearings and the nature of disposal. The characteristics and the strategy to identify whether it applies to a given case are as follows:
 
 \begin{description}
-\item [Non-appearance by the accused] --- We looked for references to Section 72
+\item [Non-appearance by the accused] -- We looked for references to Section 72
   CrPC, terms like accused not available / out of station / absconding
   / not present / absent, or that accused’s presence could not be
   secured, or references to the issuance of a bailable / non-bailable
-  warrant to secure the presence of the accused. In addition to this
+  warrant to secure the presence of the accused. In addition to this,
   we looked at references to non-appearance, absconsion, bailable /
   non-bailable warrants in the data on the purpose of hearings.
-\item [Jurisdiction issue] --- We looked for references to lack of
+\item [Jurisdiction issue] -- We looked for references to lack of
   jurisdiction / lack of proper jurisdiction / beyond jurisdiction,
   references to section 142 of the NI Act, and citations of specific
-  cases like Vijay Dhanuka, K S Joseph vs Phillips
+  cases like Vijay Dhanuka, KS Joseph vs Phillips
   Carbon. Additionally, we also marked cases that had been
   transferred, since a vast majority of these cases get transferred
   because of jurisdictional issues, and cases marked as transferred in
   the hearings data and disposal data.
-\item [Case referred to mediation] --- We looked for references to the case being
-  referred to mediation / lok adalat / ADR, or references to the
+\item [Case referred to mediation] -- We looked for references to the case being
+  referred to mediation / Lok Adalat / ADR, or references to the
   matter being settled mutually, or compromised. We also looked at
   references to the cases being sent to mediation in the hearings
   data, and references to the case concluding in the Lok Adalat or
   being settled mutually, or the parties reaching a compromise.
-\item [Multiplicity of proceedings] --- We looked for references to multiple cheques
-  being dishonored and multiple transactions, and references to
-  Section 219 and/or Section 220 of the CrPC.
-\item [Case being converted to a summons trial] --- We looked for references to the case being
+\item [Multiplicity of proceedings] -- We looked for references to multiple cheques being dishonored and multiple transactions, and references to Section 219 and/or Section 220 of the CrPC.
+\item [Case being converted to a summons trial] -- We looked for references to the case being
   tried under section 143 of the NI Act, or Sections 262, 263, 264 or
   265 of the CrPc were marked, or these sections being applicable, or
   references to the case being tried summarily were marked as not
-  summons trials. Cases where these were deemed not to apply, or that
+  summons trials. Cases where these were deemed not to apply, or
   the case was being conducted normally, or it is undesirable to try
   the case summarily, or the aforementioned sections not being
-  applicable were marked as summons trials. Further, cases where any
-  hearing mentioned summons trial as the purpose, were marked as
-  summons cases.
-\item [Outcome of the case] --- We primarily used the data from the nature of
+  applicable were marked as summons trials. Further, cases, where any hearing mentioned summons trial as the purpose were marked as summons cases.
+\item [The outcome of the case] -- We primarily used the data from the nature of
   disposal to identify the outcome. Additionally, we searched for
   references to the accused being found guilty, not guilty, convicted,
   acquitted or sentenced to fill gaps.
 \end{description}
 
-All of these case characteristics (except outcomes) are represented as
+These case characteristics (except outcomes) are represented as
 binary variables. As an example, if in a given case, if the parties
 did not appear for a hearing, the Non-appearance variable takes the
 value 1. If the parties appeared at every hearing, we mark it as
 0. Similarly, for the Summons Trial variable, if the case was
-converted to a summons trial it is marked as 1. Otherwise, it is
+converted to a summons trial, it is marked as 1. Otherwise, it is
 marked as 0. Table \ref{tab:case_chars} shows the state-wise number of
 cases in which we were able to identify characteristics of interest.
 
@@ -120,7 +112,7 @@ cases in which we were able to identify characteristics of interest.
 \end{longtable}
 }
 
-It must be noted that this is likely an underestimate because orders cannot be parsed in approximately 36\% of the cases. Further, some courts do not properly record details of the purpose of hearings and the nature of disposal. Cases in which information regarding these characteristics could not be found were marked as not having those particular characteristics. In our manual check of approximately 500 cases, we did not find any false positives or false negatives, however, the aforementioned data limitation also limits our ability to reliably check for false negatives. This in turn means there could be many more cases which have the aforementioned characteristics but could not be identified as having them.
+It must be noted that this is likely an underestimate because orders cannot be parsed in approximately 36\% of the cases. Further, some courts do not properly record details of the purpose of hearings and the nature of disposal. Cases in which information regarding these characteristics could not be found were marked as not having those particular characteristics. In our manual check of approximately 500 cases, we did not find any false positives or false negatives. However, the aforementioned data limitation also limits our ability to reliably check for false negatives. This, in turn, means there could be many more cases that have the aforementioned characteristics but could not be identified as having them.
 
 \subsubsection{Regression model specifications}
 \label{sec:model-selection}
