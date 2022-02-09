@@ -8,10 +8,11 @@
 \usepackage{longtable}
 \usepackage{booktabs}
 \usepackage{array}
+\usepackage{multirow}
 \usepackage{graphicx}
 \usepackage{enumitem}
 \usepackage[parfill]{parskip}
-\usepackage{appendix}
+\usepackage[title,titletoc]{appendix}
 \usepackage{amsmath}
 \usepackage{fnpos}
 \usepackage{geometry}
@@ -34,9 +35,6 @@
 \makeglossary
 \loadglsentries{acronyms.tex}
 
-\usepackage[hidelinks,breaklinks]{hyperref}
-\usepackage{cleveref}
-
 \AtBeginEnvironment{quote}{\smaller}
 \makeFNbottom
 \geometry{margin=1in}
@@ -50,6 +48,10 @@
 #1
 }
 \vspace*{0.2in}}
+
+
+\usepackage[hidelinks,breaklinks]{hyperref}
+\usepackage{cleveref}
 
 \title{Characterising cheque dishonour cases in India: Causes for delays and policy implications}
 \author{Devendra Damle\thanks{Devendra Damle is a researcher at National Institute of Public Finance and Policy.} and Jitender Madaan\thanks{Jitender Madaan is a professor at Indian Institute of Technology, Delhi.} and Karan Gulati\thanks{Karan Gulati is a researcher at National Institute of Public Finance and Policy.}\\ and Manish Kumar Singh\thanks{Manish Kumar Singh is a professor at Indian Institute of Technology, Rourkee.} and Nikhil Borwankar\thanks{Nikhil Borwankar is a practicing advocate.}}
@@ -65,6 +67,7 @@ TO DO
 \tableofcontents
 \newpage
 \printglossaries
+\listoftables
 \newpage
 
 \section*{Acknowledgements}
@@ -91,8 +94,10 @@ The authors would like to thank the DAKSH Centre of Excellence for Law and Techn
 \printbibliography[heading=bibintoc]
 \newpage
 
-\appendix
+\begin{appendices}
 \input{appendices}
+\end{appendices}
+
 
 \end{document}
 
