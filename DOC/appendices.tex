@@ -1,11 +1,11 @@
 \section{Regression results}
 \label{sec:regression-results-1}
-In the tables below, the rows with the prefix C(stateName) are the state dummies, and rows with the C(year) prefix are the year dummies. \emph{NonAppearance} refers to accused not appearing in the court. \emph{Summons} refers to the case being tried as a summons trial. \emph{Mediation} refers to the case being referred to mediation. \emph{Jurisdiction} refers the case having some issue with jurisdiction. \emph{Multiplicity} refers to the case either involving multiple cheques or the dishonoured cheque being issued in respect of multiple transactions. \emph{Contested} refers to the case being contested.
+In the tables below, the rows with the prefix C(stateName) are the state dummies, and rows with the C(year) prefix are the year dummies. \emph{NonAppearance} refers to the accused not appearing in court. \emph{Summons} refers to the case being tried as a summons trial. \emph{Mediation} refers to the case being referred to mediation. \emph{Jurisdiction} refers to the case having some issue with jurisdiction. \emph{Multiplicity} refers to the case either involving multiple cheques or the dishonoured cheque being issued in respect of multiple transactions. \emph{Contested} refers to the case being contested.
 
 \subsection{Impact of case characteristics on case duration (in days)}
 \label{sec:impact-case-char}
 {\footnotesize
-  \begin{longtable}{@{}lrrrrrr@{}}
+ \begin{longtable}{@{}lrrrrrr@{}}
 \label{tab:duration_reg}\\
 \toprule
 variable & coeff & std err & t & P>|t| & [0.25 & 0.95] \\\midrule
@@ -40,10 +40,12 @@ Log-Likelihood & -2.7359e+05 & & & & & \\
 \bottomrule
 \end{longtable}}
 
+\pagebreak
+
 \subsection{Impact of case characteristics on the number of hearings to dispose}
 \label{sec:impact-case-char-1}
 {\footnotesize
-  \begin{longtable}{@{}lrrrrrr@{}}
+ \begin{longtable}{@{}lrrrrrr@{}}
 \label{tab:hearings_reg}\\
 \toprule
 variable & coeff & std err & t & P>|t| & [0.25 & 0.95] \\\midrule
@@ -79,6 +81,8 @@ Log-Likelihood & -1.3767e+05 & & & & & \\
 \bottomrule
 \end{longtable}}
 
+\pagebreak
+
 \section{Understanding \S~138 of the Negotiable Instruments Act} \label{app:understanding}
 
 As per \S~138 of the Negotiable Instruments Act, 1881, if a cheque (drawn by a person for paying off a debt or a liability) is returned unpaid due to insufficiency of funds or credit, the payer may be imprisoned for up to two years or with a fine up to twice the amount of the cheque, or both.\footcite[A \textit{cheque} is defined as per \S~6 of the NI Act. It is a bill of exchange drawn on a specified banker and not expressed to be payable otherwise than on-demand. It includes the electronic image of a truncated cheque and a cheque in electronic form. Once a cheque has been signed and issued in favour of the holder of the cheque, there is a statutory presumption \S~139 of NI Act that the cheque is issued in discharge of a legally enforceable debt or liability. However, said presumption is a rebuttable one. The issuer of the cheque can rebut that presumption by adducing credible evidence that the cheque was issued for some other purpose like security for a loan.][]{sc2018_murugun} However, this is only the case when: (i) the payee presents the cheque within six months of its issuance, (ii) demand for the payment within thirty days of the return of the cheque by the bank, and (iii) the payer fails to pay within fifteen days of the receipt of such notice. The cause of action arises after these fifteen days. The payee subsequently has one month to file a complaint before the appropriate court.
@@ -89,7 +93,7 @@ A complainant may approach the concerned court within one month of the time prov
 
 Once a complaint is led in court, the court takes cognisance and issues the process for producing the accused. If the accused fails to appear, the court may issue a suitable warrant to ensure the same. As per \S~143 of the Act, cases are meant to be tried summarily. However, if the court believes that the nature of the matter is such that a sentence of imprisonment for a term exceeding one year may have to be passed or that it is, for any other reason, undesirable to try the case summarily, it may record such an order and hear the cases as a summons trial.\footnote{In case of a summary trial, if the accused pleads not guilty, the magistrate may record the substance of the evidence and deliver a judgment. However, in a summons trial, the proceeding is as any ordinary matter followed by a judgment.}
 
-Notably, the Supreme Court has observed that for the offence \S~138, the compensatory aspect of the remedy should be prioritised over the punitive aspect.\footcite{sc2010_damodar} Waiver of imprisonment instead of payment of additional compensation is permissible under exceptional circumstances.\footcite{sc2018_priyanka} The court may close proceedings if the accused deposits the amount assessed by it regarding the cheque amount, interest/costs, etc., within the stipulated period. Compounding at the initial stage and even at a later stage is acceptable.\footcite{sc2018_meters}
+Notably, the Supreme Court has observed that for the offence \S~138, the compensatory aspect of the remedy should be prioritised over the punitive aspect.\footcite{sc2010_damodar} Waiver of imprisonment instead of payment of additional compensation is permissible under exceptional circumstances.\footcite{sc2018_priyanka} The court may close proceedings if the accused deposits the amount assessed by it regarding the cheque amount, interest/costs, etc., within the stipulated period. Compounding at the initial stage and even at a later stage is acceptable.\footcite{sc2018_meters} 
 
 For brevity, \cref{fig:proceeding_138} demonstrates the course of a proceeding in the case of a cheque dishonour.
 
