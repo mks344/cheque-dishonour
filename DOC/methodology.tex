@@ -32,7 +32,7 @@ This study tests the following hypotheses:
 
 \subsection{Data description} \label{sec:data-description}
 
-We first drew a random sample of 100,000 cases filed between 1st January 2014 and 31st December 2018 across India from the database published by Development Data Lab.\footcite{devdatalabs2021_eCourtsData} This window was chosen based on consultations with other researchers and practising advocates on the quality and completeness of data. We then attempted to download the case details for these 100,000 cases from the eCourts database.\footcite{ecourts2022} We were able to download case details for approximately 89,000 cases.\footnote{This difference was caused by non-functional links, and corrupted or non-machine data.} We used regular expressions to check whether the ``Act Name'' field references the \gls{ni}. Then, we used regular expressions to search for references to the \gls{ni} in the interim and final order texts, where available. We tagged the cases found through this protocol as related to the \gls{ni}. Data availability and quality vary significantly across states. Consequently, we could not include all the states of India in our study. We identified the states to exclude from the study based on the following criteria:
+We first drew a random sample of 100,000 cases filed between 1st January 2014 and 31st December 2018 across India from the database published by Development Data Lab.\footcite{devdatalabs2021_eCourtsData} This window was chosen based on consultations with other researchers and practising advocates on the quality and completeness of data. We then attempted to download the case details for these 100,000 cases from the eCourts database.\footcite{ecourts2022} We were able to download case details for approximately 89,000 cases.\footnote{This difference was caused by non-functional links, and corrupted or non-machine data.} We used regular expressions to check whether the ``Act Name'' field references the \gls{ni}. Then, we used regular expressions to search for references to the \gls{ni} in the interim and final order texts, where available. We tagged the cases found through this protocol as related to the \gls{ni}. Data availability and quality vary significantly across States. Consequently, we could not include all the States of India in our study. We identified the States to exclude from the study based on the following criteria:
 
 \begin{itemize}
 \item States and Union Territories where we were unable to download sample data (this is because of data quality of the e-courts database);
@@ -40,7 +40,7 @@ We first drew a random sample of 100,000 cases filed between 1st January 2014 an
 \item States and Union Territories where < 2\% of the final orders (as a proportion of total NI cases) are machine-readable and in English.
 \end{itemize}
 
-Based on the criteria above, of the 29 states (including Jammu and Kashmir) and 7 Union Territories, our final sample covers 8 states and 2 Union Territories, shown in Table \ref{tab:sample_desc}. For details concerning the selection, see appendix \ref{sec:sample_selection}.
+Based on the criteria above, of the 29 States (including Jammu and Kashmir) and 7 Union Territories, our final sample covers 8 States and 2 Union Territories, shown in Table \ref{tab:sample_desc}. For details concerning the selection, see appendix \ref{sec:sample_selection}.
 
 For these 10 States and Union Territories, we drew another random sample of 500,000 cases filed between 1st January 2014 and 31st December 2018 from the Development Data Labs database.\footcite{devdatalabs2021_eCourtsData} We then attempted to download case details for these 500,000 cases. We were able to successfully download case details for 4,68,855 cases. We removed cases from District and Sessions courts since these courts hear appeals. This study attempts to analyse original matters. This gave a sample of 3,63,762 cases. As with the preliminary analysis, we used pattern-matching based on regular expressions to identify cases related to \gls{ni}. In total, our sample has 48,191 \gls{ni} cases. Out of these, 10,693 are pending cases, and 37,498 are disposed. Table \ref{tab:sample_desc} shows a summary of the sample. As shown, check dishonour cases in India represent approximately 13.2\% of courts' workload (pending and disposed).
 
@@ -80,28 +80,27 @@ To identify cases with the characteristics of interest, we analysed the interim 
 
 \item[]
 
-\item [Jurisdiction issue] -- We looked for references to lack of jurisdiction / lack of proper jurisdiction / beyond jurisdiction, references to \S~142 of the \gls{ni},\footnote{\S~142, Negotiable Instruments Act. Cognisance of offences.} and citations of specific cases like Vijay Dhanuka vs Najima Mamtaj, and KS Joseph vs Phillips Carbon. Additionally, we looked at cases that were marked transferred from one court to another or were observed to be transferred in the hearings or disposal data, since a vast majority of such transfers are due to jurisdictional issues.
+\item [Jurisdiction issue] -- We looked for references to lack of jurisdiction / lack of proper jurisdiction / beyond jurisdiction, references to \S~142 of the \gls{ni},\footnote{\S~142, Negotiable Instruments Act. Cognisance of offences.} and citations of specific cases like \citetitle{sc2014_dhanuka},\footcite{sc2014_dhanuka} and \citetitle{sc2016_carbon}.\footcite{sc2016_carbon} Additionally, we looked at cases that were marked transferred from one court to another or were observed to be transferred in the hearings or disposal data, since a vast majority of such transfers are due to jurisdictional issues.
 
 \item[]
 
-\item [Case referred to mediation] -- We looked for references to the case being referred to mediation / Lok Adalat / ADR, or references to the matter being settled mutually, or compromised. We also looked at references to the cases being sent to mediation in the hearings data, and references to the case concluding in the Lok Adalat or being settled mutually, or the parties reaching a compromise.
+\item [Case referred to mediation] -- We looked for references to the case being referred to mediation / Lok Adalat / \gls{adr}, or references to the matter being settled mutually, or compromised. We also looked at references to the cases being sent to mediation in the hearings data, and references to the case concluding in the Lok Adalat or being settled mutually, or the parties reaching a compromise.
 
 \item[]
 
-\item [Multiplicity of proceedings] -- We looked for references to multiple cheques being dishonoured and multiple transactions, and references to \S~219 and/or \S~220 of the \gls{crpc}.
+\item [Multiplicity of proceedings] -- We looked for references to multiple cheques being dishonoured and multiple transactions, and references to \S\S~219 and 220 of the \gls{crpc}.\footnote{\S\S~219 and 220, Code of Criminal Procedure. Three offences of same kind within year may be charged together; Trial for more than one offence.}
 
 \item[]
 
-\item [Case being converted to a summons trial] -- We looked for references to the case being tried under \S~143 of the NI Act, or \S\S~262, 263, 264 or 265 of the \gls{crpc} were marked, or these sections being applicable, or references to the case being tried summarily were marked as not summons trials. Cases where these were deemed not to apply, or the case was being conducted normally, or it is undesirable to try the case summarily, or the sections above not being applicable were marked as summons trials. Further, cases, where any hearing mentioned summons trial as the purpose, were marked as summons cases.
+\item [Case being converted to a summons trial] -- We looked for references to the case being tried under \S~143 of the NI Act,\footnote{\S~143, Negotiable Instruments Act. Power of Court to try cases summarily.} or \S\S~262, 263, 264 or 265 of the \gls{crpc},\footnote{\S\S~262, 263, 264 or 265, Code of Criminal Procedure. Procedure for summary trials; Record in summary trials; Judgement in cases tried summarily; Language of record and judgment.} or references to the case being tried summarily. These cases were marked as not summons trials. Cases where these were deemed not to apply, or the case was being conducted normally, or it is undesirable to try the case summarily, or the sections above not being applicable were marked as summons trials. Further, cases, where any hearing mentioned summons trial as the purpose, were marked as summons cases.
 
 \end{description}
 
-These case characteristics are represented as binary variables. As an example, if in a given case, if the parties did not appear for a hearing, the Non-appearance variable takes the value 1. If the parties appeared at every hearing, we mark it as 0. Similarly, for the Summons Trial variable, if the case was converted to a summons trial, it is marked as 1. Otherwise, it is marked as 0. Table \ref{tab:case_chars} shows the state-wise number of cases in which we were able to identify characteristics of interest.
+These case characteristics were represented as binary variables. As an example, if in a given case, the parties did not appear for a hearing, the Non-appearance variable takes the value 1. If the parties appeared at every hearing, we would mark it as 0. Similarly, for the Summons Trial variable, if the case was converted to a summons trial, it is marked as 1. Otherwise, it is marked as 0. Table \ref{tab:case_chars} shows the State-wise number of cases in which we were able to identify characteristics of interest.
 
-{\footnotesize \centering
- \begin{longtable}{@{}lrrrrrr@{}}
- \caption{\mbox{Number of cases in which we were able to identify
- characteristics of interest}}
+{\footnotesize
+ \begin{longtable}{@{}lrrrrr|r@{}}
+ \caption{Cases with identified characteristics of interest}
  \label{tab:case_chars}\\
  \toprule
  \textbf{State} & \textbf{Non} & \textbf{Summons} & \textbf{Mediation} & \textbf{Jurisdiction} & \textbf{Multiplicity} & \textbf{Total} \\
@@ -124,7 +123,7 @@ These case characteristics are represented as binary variables. As an example, i
 \end{longtable}
 }
 
-It must be noted that this is likely an underestimate because orders cannot be parsed in approximately 36\% of the cases. Further, some courts do not adequately record details of the purpose of hearings and the nature of disposal. Cases in which information regarding these characteristics could not be found were marked as not having those particular characteristics. In our manual check of approximately 500 cases, we did not find any false positives or false negatives. However, the data limitation above also limits our ability to reliably check for false negatives. This, in turn, means there could be many more cases that have the aforementioned characteristics but could not be identified as having them.
+Notably, the State-wise numbers presented in \Cref{tab:case_chars} are likely underestimated. This is because orders cannot be parsed in approximately 36\% of the cases in our sample. Further, some courts do not adequately record details of the purpose of hearings and the nature of disposal.\footcite{damle2020_ecourtsData} Cases in which information regarding these characteristics could not be found were marked as not having those particular characteristics. In our manual check of approximately 500 cases, we did not find any false positives or false negatives. However, the data limitation above also limits our ability to reliably check for false negatives. This, in turn, means there could be many more cases that have the characteristics above but could not be identified as having them.
 
 \subsubsection{Regression model specifications} \label{sec:model-selection}
 \input{model}
