@@ -82,7 +82,7 @@ Table \ref{tab:mediation} summarises the outcomes of cases referred to mediation
  \midrule
 \endhead
 \multirow{3}{*}{Dismissed} & other & 478 & 5.46 & 710 \\
- & settlement & 8 & 0.09 & 512.5 \\
+ & settlement & 8 & 0.09 & 512 \\
  & withdrawn & 2942 & 33.58 & 491 \\
  \midrule
 \multirow{4}{*}{Disposed} & compounded & 459 & 5.24 & 638 \\
@@ -90,16 +90,111 @@ Table \ref{tab:mediation} summarises the outcomes of cases referred to mediation
  & settlement & 2945 & 33.62 & 527 \\
  & withdrawn & 213 & 2.43 & 462 \\
  \midrule
- Other & other & 320 & 3.65 & 752.5 \\
+ Other & other & 320 & 3.65 & 752 \\
  \midrule
- \multicolumn{2}{c}{\textbf{Total}} & \textbf{8760} & \textbf{100} & \multicolumn{1}{l}{\textbf{-}} \\
+ \multicolumn{2}{c}{\textbf{Total}} & \textbf{8760} & \textbf{100.00} & \multicolumn{1}{l}{\textbf{-}} \\
  \bottomrule
  \multicolumn{5}{p{11cm}}{{\footnotesize \emph{Note: The total is less than the total cases referred to mediation owing to the limitations in the data on disposal type and filing/disposal dates.}}}
 \end{longtable}}
 
 \subsection{Jurisdictional issues}
+
+Prima facie, there are four territorial areas involved in a cheque dishonour case - (i) where the issuer ordinarily resides, (ii) where the payee ordinarily resides, (iii) where the cheque was issued, and (iv) where the cheque was presented. 
+
+Prior to 2015, the \gls{ni} only specified circumstances under which complaints concerning cheque dishonour could be filed. It did not specify the territorial jurisdiction of the courts where such a complaint had to be filed. This resulted in individuals filing cases in locations not readily accessible to the opposite party. Thus, cases would have to be transferred to suitable courts for hearing. In 2015, the Act was amended to provide that complaints can only be filed in a court in whose jurisdiction the bank branch of the payee lies.\footcite{niAmend2015} While this addressed the lack of clarity in the court where complaints had to be filed, invariably, cases commenced in territorial jurisdiction where the accused did not ordinarily reside.\footcite{amicus2020_submission}
+
+Such jurisdictional issues, where cases have to be transferred from one court to another, may lead to delays.\footcite{sc2020_138, amicus2020_submission} We thus test the following hypotheses:
+
+\begin{center}
+ \textit{\(H_1\): Cases with jurisdictional issues take longer to dispose}
+
+ \textit{\(H_2\): Cases with jurisdictional issues take more hearings to dispose}
+\end{center}
+
+Both the hypotheses test positive. Cases with jurisdictional issues typically add 287 days and 5.7 hearings to a case. Notably, as \cref{tab:year_jurisdictional} shows, there was an increase in cases with jurisdictional issues in 2016; however, this is likely to be a consequence of the amendment in 2015, which resulted in more cases being transferred to courts that would now have appropriate jurisdiction.
+
+\begin{longtable}{@{}c|ccccc@{}}
+\caption{Year-wise cases with jurisdictional issues}
+\label{tab:year_jurisdictional}\\
+\toprule
+\textbf{Year} & \textbf{2014} & \textbf{2015} & \textbf{2016} & \textbf{2017} & \textbf{2018} \\ \midrule
+\textbf{Cases with jurisdictional issues} & \multicolumn{1}{r}{2089} & \multicolumn{1}{r}{2229} & \multicolumn{1}{r}{3520} & \multicolumn{1}{r}{3360} & \multicolumn{1}{r}{2900} \\ \bottomrule
+\end{longtable}
+
+This also has an impact on courts' workload. As \cref{tab:summary_results} shows, over 29\% of \gls{ni} cases have jurisdictional issues. If these are resolved, and the proportions and ratios of our analysis and results hold good for the country as a whole, courts across the country can avoid 78,48,857 hearings. While the Supreme Court has provides clarity on the procedure to be followed when the accused does not ordinarily reside within a court's jurisdiction, there is a need for further analysis on how to reduce such cases in the first place, since parties need not ordinarily reside and have bank accounts within the jurisdiction of the same court.
+
 \subsection{Multiplicity of proceedings}
+
+\S~219 of the \gls{crpc} provides that when a person is
+accused of more than one offence of the same kind
+committed within twelve months, all offences may be tried together, subject to a maximum of three such offences. Similarly, as per \S~220, if a person commits more than one offence in one transaction, she may be charged with all offences and tried at one trial. Experience has shown that a single financial transaction may lead to the dishonour of multiple cheques. However, under the \gls{crpc}, only three offences and, therefore, the dishonour of only three cheques can be tried together. This has resulted in multiple proceedings involving either the same issuer (accused) or the same transaction.
+
+Reducing such multiplicity may reduce the burden on courts. We thus test the following hypotheses:
+
+\begin{center}
+ \textit{\(H_1\): Cases involving multiple cheques longer to dispose}
+
+ \textit{\(H_2\): Cases involving multiple cheques take more hearings to dispose}
+\end{center}
+
+Both the hypotheses test positive. Cases with a multiplicity of proceedings typically add 171 days and 10.0 hearings to a case. This may be due to the excess coordination required on the part of the judiciary. To address this challenge, \citetitle{sc2020_138}, the Amici Curiae appointed by the Supreme Court recommended that:
+
+\begin{enumerate}
+ \item The Union Government bring a legislative amendment to address the multiplicity of proceedings where cheques have been issued for one purpose. However, multiple complaints, summons and trials have to be undertaken.
+ 
+ \item[]
+ 
+ \item The Supreme Court issue directions to High Courts to amend their Criminal Rules of Practice (by whatever name called) to ensure that complaints arising out of the same transaction, but resulting in dishonour of multiple cheques be clubbed together and a common process evolved for joint trial.\footcite{amicus2020_submission}
+\end{enumerate}
+
+\begin{longtable}{@{}lrr|r@{}}
+\caption{State-wise multiplicity of proceedings}
+\label{tab:state_multiplicity} \\
+\toprule
+\multicolumn{1}{c}{\textbf{State}} & \multicolumn{1}{c}{\textbf{Multiplicity of proceedings}} & \multicolumn{1}{c}{\textbf{Total NI Act cases}} & \multicolumn{1}{|c}{\textbf{As \%}} \\ \midrule
+Andhra Pradesh & 124 & 2638 & 4.7 \\
+Chandigarh & 53 & 731 & 7.3 \\
+Delhi & 208 & 5202 & 4.0 \\
+Goa & 18 & 399 & 4.5 \\
+Gujarat & 107 & 6752 & 1.6 \\
+Haryana & 540 & 5319 & 10.2 \\
+Himachal Pradesh & 33 & 1164 & 2.8 \\
+Karnataka & 410 & 11184 & 3.7 \\
+Maharashtra & 135 & 8875 & 1.5 \\
+Punjab & 382 & 5885 & 6.5 \\ \midrule
+\textbf{Total} & \textbf{2010} & \textbf{48149} & \textbf{4.2} \\ \bottomrule
+\end{longtable}
+
+\textcolor{red}{The number of total cases in the master data does not match that in the rest of the paper.}
+
+The Court accepted both these recommendations.\footcite{sc2020_138} However, as \Cref{tab:state_multiplicity} shows, the burden caused due to multiplicity varies across States. While on average, 4.2\% of the cases in our sample include a multiplicity of proceedings, this is as high as 10.2\% in Haryana. Notably, the three States and Union Territories with the highest proportion of such proceedings, i.e., Haryana, Punjab, and Chandigarh, all come under one High Court -- the High Court of Punjab and Haryana at Chandigarh. Thus, bringing an amendment to the \gls{crpc} may not be an appropriate use of resources. Instead, in line with the second recommendation by the Amici, there is a need for targeted and context-specific intervention by concerned High Courts.   
+
 \subsection{Contested cases}
+
+When cases are contested, parties lead evidence before a court and rebut arguments. This is likely to lead to longer proceedings since courts have to come to reasoned decisions based on the proceedings. On the other hand, uncontested cases use minimal court resources, since parties reach a mutually acceptable decision verified by the court.
+
+Reducing the number of contested cases may reduce the burden on courts. We thus test the following hypothesis:
+
+\begin{center}
+ \textit{\(H_1\): Contested cases take longer to dispose}
+
+ \textit{\(H_2\): Contested cases take more hearings to dispose}
+\end{center}
+
+While \(H_2\) tests positive, \(H_1\) tests negative. Contested cases typically take 3 hearings more and 46 days less to dispose than uncontested cases. In 1925, the Civil Justice Committee noted that there is a temptation to hold back the heavier \textit{contested} suits and devote attention to the lighter ones.\footcite{cg1925_civiljustice} Close to a hundred years later, this conjecture may not hold true for cases under the \gls{ni}. The results imply that courts efficiently dispose cases when both parties participate in the proceedings by scheduling successive hearings in a shorter time than when the matter is uncontested.
+
+\begin{longtable}{@{}c|ccccc@{}}
+\caption{Year-wise contested cases}
+\label{tab:year_contest}\\
+\toprule
+\textbf{Year} & \textbf{2014} & \textbf{2015} & \textbf{2016} & \textbf{2017} & \textbf{2018} \\ \midrule
+\textbf{Contested cases} & \multicolumn{1}{r}{2171} & \multicolumn{1}{r}{1944} & \multicolumn{1}{r}{1822} & \multicolumn{1}{r}{1478} & \multicolumn{1}{r}{868} \\ \bottomrule
+\end{longtable}
+
+While courts may not be able to reduce the number of hearings required to dispose of a contested case, prioritisation and successive scheduling reflects a positive framework to ensure expeditious trial. However, the proportion of contested cases reduced from 2014 and 2018. Uncontested cases, that form the majority, require less intervention by courts. They are listed after larger gaps. This may be due to parties needing more time to reach a mutually acceptable decision or courts prioritising contested cases. Either case suggests there may be some scope for improving the scheduling mechanism for uncontested cases.
+
+%Add text about fixed effects and pending cases
+%write email
 
 %%% Local Variables:
 %%% mode: latex
