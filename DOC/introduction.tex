@@ -1,8 +1,8 @@
-India has a slow judiciary - courts are clogged with large backlogs.\footcite{moog1992delays, debroy2008justice, dutta2019modernise} As of 8th December 2021, over forty-one million cases were pending across district courts.\footcite{njdg2021} Slow judiciaries have adverse consequences on the structure and efficiency of markets and the quality of life of citizens.\footcite{world2004world, chemin2007impact} Therefore, minimising unnecessary judicial delays could help improve enforcement and enhance the overall rule of law. It is estimated that judicial delays cost India around 1.5\% of its GDP annually.\footcite{dey2016_cost} Against this backdrop, it is hardly surprising that tackling judicial delay has increasingly become a top priority for Indian judges and policymakers.
+India has a slow judiciary - courts are clogged with large backlogs.\footcite{moog1992delays, debroy2008justice, dutta2019modernise} As of 8th December 2021, over forty-one million cases were pending across district courts.\footcite{njdg2021} Slow judiciaries have adverse consequences on the structure and efficiency of markets and the quality of life of citizens.\footcite{world2004world, chemin2007impact, rao2020institutional} Therefore, minimising unnecessary judicial delays could help improve enforcement and enhance the overall rule of law. It is estimated that judicial delays cost India around 1.5\% of its GDP annually.\footcite{dey2016_cost} Against this backdrop, it is hardly surprising that tackling judicial delay has increasingly become a top priority for Indian judges and policymakers.
 
-One reason for the large burden on courts is believed to be the alleged large share of \gls{ni} cases.\footnote{In particular, \S~138 of the Negotiable Instruments Act (Dishonour of cheque for insufficiency, etc., of funds in the account). Act 26 of 1881} As per the \gls{lci}, they represent 6.5\% and 7.8\% of all institutions and pendency in Indian courts, respectively.\footcite{lci2014_arrears} As per one order of the Supreme Court of India, they reflect more than 15\% of all criminal cases in the District Courts.\footcite{sc2020_makwanavstate} As per another order, they constitute 30\% of the total pendency in courts.\footcite[Similarly, a study published by the Department of Justice briefly touches on the burden of such cases on the judiciary and posits that they constitute 34\% of pending criminal cases in Maharashtra.][]{sc2020_138, mahadik2018_maharashtra}
+One reason for the large burden on courts is believed to be the (supposed) large share of \gls{ni} cases.\footnote{In particular, \S~138 of the Negotiable Instruments Act (Dishonour of cheque for insufficiency, etc., of funds in the account). Act 26 of 1881} As per the \gls{lci}, they represent 6.5\% and 7.8\% of all institutions and pendency in Indian courts, respectively.\footcite{lci2014_arrears} As per one order of the Supreme Court of India, they reflect more than 15\% of all criminal cases in the District Courts.\footcite{sc2020_makwanavstate} As per another order, they constitute 30\% of the total pendency in courts.\footcite[Similarly, a study published by the Department of Justice briefly touches on the burden of such cases on the judiciary and posits that they constitute 34\% of pending criminal cases in Maharashtra.][]{sc2020_138, mahadik2018_maharashtra}
 
-Given the disagreement, any acceptance among policymakers that \gls{ni} cases (\textit{cheque dishonour cases} hereinafter) are the reason for India's slow judiciary is likely to lead to misguided solutions. The misrepresentation leads to diverting resources from other routes of judicial reform. Thus, one requires a more detailed analysis of the proportion of such cases, their causes, timelines, etc. This information can help judges and policymakers better target interventions.\footcite[For the importance of accurate judicial data, see][]{damle2020_ecourtsData, daksh2020_data, damle2020_land}
+Given the disagreement, any acceptance among policymakers that \gls{ni} cases (\textit{cheque dishonour cases} hereinafter) are the reason for India's slow judiciary is likely to lead to misguided solutions. The misrepresentation could lead to diverting resources from other routes of judicial reform. Thus, one requires a more detailed analysis of the proportion of such cases, their causes, timelines, etc. This information can help judges and policymakers better target interventions.\footcite[For the importance of accurate judicial data, see][]{damle2020_ecourtsData, daksh2020_data, damle2020_land}
 
 To this end, in 2020, the Supreme Court of India took on board a suo-motu case concerning the “expeditious trial of cases under section 138 of the Negotiable Instruments Act 1881”.\footcite{sc2020_138} Among other directions, the court (i) appointed a \gls{coe}\footnote{Headed by Hon’ble Mr Justice RC Chavan, former Judge of the Bombay High Court.} and (ii) appointed Amici Curiae to assist the court,\footnote{Mr Sidharth Luthra (Sr Advocate) and Mr K Parameshwar (Advocate).} to study processes to expedite disposal of complaints under \S~138 of the \gls{ni}. This is in a series of interventions targeted to understand cheque dishonour cases in India. As \cref{sec:history} shows, most knowledge and development concerning such cases in India has come from government institutions, i.e. the \gls{lci} and the judiciary.
 
@@ -46,6 +46,92 @@ Lastly, in March 2020, the Supreme Court of India took on board a suo-motu case 
 \end{enumerate}
 
 Noticeably, the recommendations of the Amici Curiae were in line with previously accepted reasons for delays in disposal. While considering the recommendations, the Supreme Court recommended the Government and High Courts take necessary action where possible and held that they should be the subject matter of deliberation by the \gls{coe} appointed in the same case.\footnote{Headed by Hon’ble Mr Justice RC Chavan, former Judge of the Bombay High Court.}
+
+\section{Conceptual framework and hypotheses}
+\label{sec:select-case-char}
+
+The recommendations of the Amici Curiae and the Supreme Court target several aspects of a \gls{ni} case. They posit that these aspects likely lead to delays. This study examines six areas that are the targets of these interventions, viz. ---
+
+\begin{enumerate}
+\item non-appearance by the accused;
+\item trials being run as summons trials;
+\item reference to mediation;
+\item jurisdictional issues;
+\item multiplicity of proceedings;
+\item setting up additional \gls{ni} courts.
+\end{enumerate}
+
+The case-characteristics whose impact we have chosen to examine were determined based on two factors: (1) the importance of that characteristic and (2) the feasibility of finding reliable information about it in the eCourts data. Accordingly, we chose to examine the effect of six case characteristics which map onto the six targets of intervention mentioned above. The characteristics we chose are as follows:
+\begin{enumerate}
+\item The accused fails to appear before the court for at least one hearing;
+\item The case is converted to a summons trial;
+\item The case is referred to mediation;
+\item The case has jurisdictional issues and is transferred to another court, as a result;
+\item The case contains multiplicity of proceedings --- either the dishonoured cheque was issued to satisfy multiple transactions or multiple cheques were dishonoured;
+\item The case was contested.
+\end{enumerate}
+
+These characteristics represent six kinds of events that can take place in the course of litigating the case.\footnote{These are not mutually exclusive. One or more of these events can and do take place in the same case.} We test whether the occurrence of the event affects the case duration and the number hearings required to dispose it. We discuss the salience of each case characteristic and the accompanying hypotheses below.
+
+\subsection{Non-appearance of the accused} 
+\label{sec:non-appe-accus}
+
+\textcite{ostrom2000efficiency}, in a study of nine state criminal trial courts in the United States, find that criminal cases in which the defendant absconds take 40--90 days longer to dispose than those where the defendant appears in court.\footnote{The authors attribute this to the fact that in such cases, a separate procedure has to be conducted for the judge to issue a bench warrant to produce the accused before the court.} The defendant failing to appear in court is one of the leading causes for failed hearings, and consequently delays in case disposal in the United Kingdom \autocite{crownProsecutionService2006_magistrateCourtEfficiency}. Similarly, \textcite{llangasinghe1988_fijiJudicialDelays} find that the accused absconding is the most common reason for delays in case disposal in magistrates' courts in Fiji. The Amici Curiae and the Supreme Court's recommendations are premised on the notion that non-appearance of the accused leads to delays. We therefore seek to examine whether this holds good for cheque dishonour cases in India. We test the following hypotheses:
+
+\begin{description}
+\item[H$_{1a}$] : cases where the accused does not appear for one or more hearings require more days to dispose
+\item[H$_{1b}$] : cases where the accused does not appear for one or more hearings require more hearings to dispose
+\end{description}
+
+\subsection{Conversion to summons trial}
+\label{sec:conv-summ-trial}
+
+We could not find empirical studies on the effectiveness of summary trials in reducing case duration. Procedural law governing summary trials in the United States and United Kingdom are premised on the assumption that summary trials would reduce time delays in case disposal (\autocite{miller2003}). At the same time, \textcite{miller2003} argues that regardless of the time-savings that may (or may not) result from summary trials, the discretion it gives to courts violates the principle of the right to a trial by jury. Therefore, bearing in mind the Supreme Court and Amici Curiae's recommendation that, to the extent possible, cases should be conducted as summary trials, and they should be converted to summons trials only in specific situations we test the following hypotheses:
+
+\begin{description}
+\item[H$_{2a}$] : cases which are converted to summons trials require more days to dispose
+\item[H$_{2b}$] : cases where are converted to summons trials require more hearings to dispose
+\end{description}
+
+\subsection{Cases referred to mediation by the court} \label{sec:furth-exam-cases}
+
+\textcite{buscaglia1997_latinAmericaCourtDelays} find that, in Latin American courts, when judges mandate mediation it reduces the overall time required to dispose a case.\footnote{They conjecture that the efficiency gains would result from the judges having to dedicate less time to adjudicate such cases.} However, a review of empirical research on the time and cost-effectiveness of court-annexed Alternative Dispute Resolution (ADR), including mediation, by \textcite{wissler2004effectiveness} finds no conclusive relationship between the time required to dispose cases via ADR as compared to going to trial. Some studie reviwed by \textcite{wissler2004effectiveness} find that mediation can increase the duration, some find that it can decrease the duration, while some find no effect. \textcite{heise2010adr} further finds that participation in ADR does not have a significant effect on case disposal time, but cases in which the parties choose to settle do take less time than ADR. Given the mixed findings on the effect of mediation and the Supreme Court and Amici Curiae's opinion that court-annexed mediation can reduce time to dispose cases, we test the following hypotheses:
+
+\begin{description}
+\item[H$_{3a}$] : cases which are referred to mediation require more days to dispose
+\item[H$_{3b}$] : cases where are referred to mediation require more hearings to dispose
+\end{description}
+
+\subsection{Jurisdictional issues}
+
+Prima facie, there are four territorial areas involved in a cheque dishonour case - (i) where the issuer ordinarily resides, (ii) where the payee ordinarily resides, (iii) where the cheque was issued, and (iv) where the cheque was presented. 
+
+Prior to 2015, the \gls{ni} only specified circumstances under which complaints concerning cheque dishonour could be filed. It did not specify the territorial jurisdiction of the courts where such a complaint had to be filed. This resulted in individuals filing cases in locations not readily accessible to the opposite party. Thus, cases would have to be transferred to suitable courts for hearing. In 2015, the Act was amended to provide that complaints can only be filed in a court in whose jurisdiction the bank branch of the payee lies.\footcite{niAmend2015} While this addressed the lack of clarity in the court where complaints had to be filed, invariably, cases commenced in territorial jurisdiction where the accused did not ordinarily reside.\footcite{amicus2020_submission}
+
+Such jurisdictional issues, where cases have to be transferred from one court to another, may lead to delays.\footcite{sc2020_138, amicus2020_submission} We thus test the following hypotheses:
+
+\begin{description}
+\item[H$_{4a}$] : Cases with jurisdictional issues require more days to dispose
+\item[H$_{4b}$] : Cases with jurisdictional issues require more hearings to dispose
+\end{description}
+
+\subsection{Multiplicity of proceedings}
+
+\S~219 of the \gls{crpc} provides that when a person is accused of more than one offence of the same kind committed within twelve months, all offences may be tried together, subject to a maximum of three such offences. Similarly, as per \S~220, if a person commits more than one offence in one transaction, she may be charged with all offences and tried at one trial. Experience has shown that a single financial transaction may lead to the dishonour of multiple cheques. However, under the \gls{crpc}, only three offences and, therefore, the dishonour of only three cheques can be tried together. This has resulted in multiple proceedings involving either the same issuer (accused) or the same transaction. Reducing such multiplicity may reduce the burden on courts. We thus test the following hypotheses:
+
+\begin{description}
+\item[H$_{5a}$] : Cases involving multiplicity of proceedings require more days to dispose
+\item[H$_{5b}$] : Cases involving multiplicity of proceedings require more hearings to dispose
+\end{description}   
+
+\subsection{Contested cases}
+\label{sec:contested_cases_meth}
+When cases are contested, parties lead evidence before a court and rebut arguments. This is likely to lead to longer proceedings since courts have to come to reasoned decisions based on the proceedings. On the other hand, uncontested cases use minimal court resources, since parties reach a mutually acceptable decision verified by the court. \textcite{ostrom2000efficiency} find that in cases that went to trial took 53--158 days longer to dispose than cases in which the defendant pleaded guilty.\footnote{The variation in the average delay is between the different jurisdictions studied.} \textcite{buscaglia1997_latinAmericaCourtDelays}, in a study of judicial efficiency in Latin American courts, find that willingness to litigate increases the duration of court cases, and results in a greater backlog of cases. \textcite{crownProsecutionService2006_magistrateCourtEfficiency} finds that, in magistrate courts in the United Kingdom, contested cases typically take a greater number of hearings to dispose than uncontested cases. Contested cases take longer to dispose than uncontested cases. The difference between the time it takes the courts to dispose of uncontested cases as compared to contested cases can yield insights into how efficient the court is at handling cases that go to trial, as compared to cases in which the defendant is willing to settle or compound. The potential effectiveness of the Supreme Court and Amici Curiae's recommendation of setting up more \gls{ni} courts can be indirectly tested through this characteristic. We thus test the following hypotheses:
+
+\begin{description}
+\item[H$_{6a}$] : Contested cases require more days to dispose
+\item[H$_{6b}$] : Contested cases require more hearings to dispose
+\end{description}
 
 %%% Local Variables:
 %%% mode: latex

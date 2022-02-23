@@ -1,40 +1,6 @@
-\subsection{Research questions} \label{sec:research-questions}
-
-The recommendations of the Amici Curiae and the Supreme Court target several aspects of a \gls{ni} case. They posit that these aspects likely lead to delays. This study examines five areas that are the targets of these interventions, viz. ---
-
-\begin{enumerate}
-\item jurisdictional issues;
-\item multiplicity of proceedings;
-\item non-appearance by the accused;
-\item trials being run as summons trials;
-\item increasing the number of specialised \gls{ni} courts; and
-\item reference to mediation.
-\end{enumerate}
-
-The Amici Curiae and the Supreme Court expect that cases filed in wrong jurisdictions take longer to dispose. Similarly, multiplicity of proceedings, non-appearance of the accused, and cases being run as summons trials are thought to increase case duration and lead to greater pendency. On the other hand, increasing the number of courts and referring more cases to mediation is expected to reduce case duration and pendency. 
-
-This study tests the following hypotheses:
-
-\begin{enumerate}
-\item Factors that increase the overall case duration and the number of hearings required to dispose it ---
- \begin{enumerate}
- \item cases where there are jurisdictional issues
- \item cases where there is a multiplicity of proceedings (i.e. multiple cheques were dishonoured, or a dishonoured cheque was a part of multiple transactions)
- \item cases where the accused does not appear for one or more hearings
- \item cases being converted to summons trials
- \end{enumerate}
-\item Factors that decrease the overall case duration and the number of hearings required to dispose it ---
- \begin{enumerate}
- \item a case being uncontested
- \item referring a case to mediation
- \end{enumerate}
-\end{enumerate}
-
 \subsection{Data description} \label{sec:data-description}
 
-We first drew a random sample of 100,000 cases filed between 1st January 2014 and 31st December 2018 across India from the database published by Development Data Lab.\footcite{devdatalabs2021_eCourtsData} This window was chosen based on consultations with other researchers and practising advocates on the quality and completeness of data. We then attempted to download the case details for these 100,000 cases from the eCourts database.\footcite{ecourts2022} We were able to download case details for approximately 89,000 cases.\footnote{This difference was caused by non-functional links, and corrupted or non-machine data.} We used regular expressions to check whether the ``Act Name'' field references the \gls{ni}. Then, we used regular expressions to search for references to the \gls{ni} in the interim and final order texts, where available. We tagged the cases found through this protocol as related to the \gls{ni}. Data availability and quality vary significantly across States. Consequently, we could not include all the States of India in our study. We identified the States to exclude from the study based on the following criteria:
-
-\textcolor{red}{This would imply that our data is for the \gls{ni} and not for \S~138. We should bring this out more clearly. I haven't done so yet, because I am unsure if this is the case.}
+We first drew a random sample of 100,000 cases filed between 1st January 2014 and 31st December 2018 across India from the database published by Development Data Lab.\footcite{devdatalabs2021_eCourtsData} This window was chosen based on consultations with other researchers and practising advocates on the quality and completeness of data. We then attempted to download the case details for these 100,000 cases from the eCourts database.\footcite{ecourts2022} We were able to download case details for approximately 89,000 cases.\footnote{This difference was caused by non-functional links, and corrupted or non-machine data.} We used regular expressions to check whether the ``Act Name'' field references the \gls{ni}. This was the first level of case classification. However, from our previous experience with eCourts data, we expected there to be more NI Act cases among cases where the Act Name field did not match our search parameters.\footcite[The Act Name field sometimes does not contain the name of the substantive act, but rather the name of procedural act (e.g.: CrPC) or in rare cases the subject matter of the case. This is mainly due to the fact that case classification and nomenclature practices vary from state-to-state. However, in rare cases, the field is not populated at all, or contains erroneous information. For details please see ][]{damle2020_ecourtsData} So we used regular expressions to search for references to the \gls{ni}, cheque bounce/dishonour along with \S~138 in the interim and final order texts, where available. We tagged the cases found through this protocol as related to cheque dishonour under \S~138 of the \gls{ni} (NI Act cases, for short). Data availability and quality vary significantly across States. Consequently, we could not include all the States of India in our study. We identified the States to exclude from the study based on the following criteria:
 
 \begin{itemize}
 \item States and Union Territories where we were unable to download sample data (this is because of data quality of the e-courts database);
@@ -44,7 +10,7 @@ We first drew a random sample of 100,000 cases filed between 1st January 2014 an
 
 Based on the criteria above, of the 29 States (including Jammu and Kashmir) and 7 Union Territories, our final sample covers 8 States and 2 Union Territories, shown in Table \ref{tab:sample_desc}. For details concerning the selection, see appendix \ref{sec:sample_selection}.
 
-For these 10 States and Union Territories, we drew another random sample of 500,000 cases filed between 1st January 2014 and 31st December 2018 from the Development Data Labs database.\footcite{devdatalabs2021_eCourtsData} We then attempted to download case details for these 500,000 cases. We were able to successfully download case details for 4,68,855 cases. We removed cases from District and Sessions courts since these courts hear appeals. This study attempts to analyse original matters. This gave a sample of 3,63,762 cases. As with the preliminary analysis, we used pattern-matching based on regular expressions to identify cases related to \gls{ni}. In total, our sample has 48,191 \gls{ni} cases. Out of these, 10,693 are pending cases, and 37,498 are disposed. Table \ref{tab:sample_desc} shows a summary of the sample. As shown, check dishonour cases in India represent approximately 13.2\% of courts' workload (pending and disposed).
+For these 10 States and Union Territories, we drew another random sample of 500,000 cases filed between 1st January 2014 and 31st December 2018 from the Development Data Labs database.\footcite{devdatalabs2021_eCourtsData} We then attempted to download case details for these 500,000 cases. We were able to successfully download case details for 4,68,855 cases. We removed cases from District and Sessions courts since these courts hear appeals. This study attempts to analyse original matters. This gave a sample of 3,63,720 cases. As with the preliminary analysis, we used pattern-matching based on regular expressions to identify cases related to \gls{ni}. In total, our sample has 48,149 \gls{ni} cases. We manually checked the NI Act classification for approximately 1700 cases from the sample of 3,63,720 to check for erroneous classification. We found 1 false positive and no false negatives.\footnote{The false positive was due to the fact that for one case in Haryana, the court had dumped all the judgments issued on that date of disposal in the PDF file containing the order. As a result, the text for an actual NI Act case (along with all other cases disposed on that day) was erroneously included in the PDF of the judgment of that case. We did a further check for similar erroneous data and found one more instance from the same court. However, none of the judgments in the PDF nor the case itself was related to NI Act. So effectively, it was correctly classified.} However, the data limitation above also limits our ability to reliably check for false negatives. Table \ref{tab:sample_desc} shows a summary of the sample. As shown, check dishonour cases in India represent approximately 13.2\% of courts' workload (pending and disposed). This number could be an underestimate due to the fact that orders cannot be parsed in approximately 36\% of the cases in our sample. So it is possible that some of them are NI Act cases, even though the Act Name field does not say so.
 
 {\footnotesize \begin{longtable}{@{}lrrr|r@{}}
 \caption{Sample description}
@@ -52,20 +18,84 @@ For these 10 States and Union Territories, we drew another random sample of 500,
 \toprule
 \textbf{State} & \textbf{\gls{ni} cases} & \textbf{Non-\gls{ni} cases} & \textbf{\%\gls{ni} cases} & \textbf{Total cases}\\ \midrule
 \endhead
-Andhra Pradesh & 2640 & 18567 & 12.4 & 21207\\
+Andhra Pradesh & 2638 & 18567 & 12.4 & 21205\\
 Chandigarh & 731 & 1364 & 34.9 & 2095\\
-Delhi & 5211 & 14742 & 26.1 & 19953\\
+Delhi & 5202 & 14742 & 26.1 & 19944\\
 Goa & 399 & 2713 & 12.8 & 3112\\
-Gujarat & 6756 & 49476 & 12.0 & 56232\\
-Haryana & 5326 & 33542 & 13.7 & 38868\\
-Himachal Pradesh & 1166 & 11948 & 8.9 & 13114\\
-Karnataka & 11195 & 75807 & 12.9 & 87002\\
-Maharashtra & 8880 & 82673 & 9.7 & 91553\\
-Punjab & 5887 & 24739 & 19.2 & 30626\\
+Gujarat & 6752 & 49476 & 12.0 & 56228\\
+Haryana & 5319 & 33542 & 13.7 & 38861\\
+Himachal Pradesh & 1164 & 11948 & 8.9 & 13112\\
+Karnataka & 11184 & 75807 & 12.9 & 86991\\
+Maharashtra & 8875 & 82673 & 9.7 & 91548\\
+Punjab & 5885 & 24739 & 19.2 & 30624\\
 \midrule
-\textbf{Total} & \textbf{48191} & \textbf{315571} & \textbf{13.2} & \textbf{363762}\\ \bottomrule
+\textbf{Total} & \textbf{48149} & \textbf{315571} & \textbf{13.2} & \textbf{363720}\\ \bottomrule
 \end{longtable}
 }
+
+Table \ref{tab:state_disposal} shows the number of disposed and pending cases state-wise and the median time taken to dispose cases. According to \S~143(3) of the \gls{ni}, courts are required to, as far as reasonably possible, to complete NI Act cases within six months, i.e. 180 days. However, as the table shows, the median time taken to dispose these cases is above the recommended limit in all states. Of the 37,479 disposed cases in the sample, 10,171 --- i.e. 27\% cases --- were disposed within the prescribed limit of six months.
+
+\begin{longtable}{@{}lrrrr@{}}
+  \caption{State-wise disposed cases and time taken to dispose}\label{tab:state_disposal}\\
+\toprule
+\textbf{State} &  \multicolumn{1}{p{3cm}}{\textbf{Disposed cases}} &  \multicolumn{1}{p{3cm}}{\textbf{Pending cases}} &  \multicolumn{1}{p{3cm}}{\textbf{Median days to dispose}} &  \multicolumn{1}{p{3cm}}{\textbf{Median hearings to dispose}} \\
+\midrule
+Andhra Pradesh   &      2154 &      484 &                     451 &                  16 \\
+Chandigarh       &       703 &       28 &                     453 &                   9 \\
+Delhi            &      3910 &     1292 &                     518 &                   8 \\
+Goa              &       280 &      119 &                     352 &                  16 \\
+Gujarat          &      5183 &     1569 &                     323 &                  13 \\
+Haryana          &      4241 &     1078 &                     488 &                  12 \\
+Himachal Pradesh &       673 &      491 &                     547 &                  16 \\
+Karnataka        &     10221 &      963 &                     218 &                   6 \\
+Maharashtra      &      5024 &     3851 &                     520 &                  19 \\
+Punjab           &      5080 &      805 &                     440 &                  13 \\
+\midrule
+Overall & 37469 & 10680 & 395 & 11 \\
+\bottomrule
+\end{longtable}
+
+Table \ref{tab:state_pending} shows the pending cases across states, and the duration of the pendency. The single largest chunk o pending cases (35\%) have been pending for between 2 to 3 years. There is state-wise variation in the distribution of pending cases. So the recommendation of the Supreme Court that the respective High Courts should find solutions specifically suited for their states, has merits.
+
+\begin{longtable}{@{}lrrrrrr@{}}
+    \caption{State-wise pending cases by duration of pendency}\label{tab:state_pending}\\
+\toprule
+\multirow{2}{*}{\textbf{State}} &  \textbf{Number of pending cases by duration (in years)} \\
+\cmidrule{2-7}
+ &  (1, 2] &  (2, 3] &  (3, 4] &  (4, 5] &  (5, 6] &  (6, 7] \\
+\midrule
+\endhead
+Andhra Pradesh   &      45 &     196 &     120 &      80 &      29 &      14 \\
+Chandigarh       &       0 &       6 &      16 &       5 &       1 &       0 \\
+Delhi            &     127 &     393 &     494 &     195 &      69 &      14 \\
+Goa              &      23 &      41 &      25 &      26 &       4 &       0 \\
+Gujarat          &     189 &     481 &     415 &     345 &      95 &      44 \\
+Haryana          &     201 &     578 &     204 &      82 &       9 &       4 \\
+Himachal Pradesh &      47 &     142 &     120 &      96 &      56 &      28 \\
+Karnataka        &     134 &     422 &     253 &      97 &      40 &      17 \\
+Maharashtra      &     418 &    1122 &     921 &     787 &     431 &     172 \\
+Punjab           &     150 &     414 &     156 &      55 &      24 &       6 \\
+\midrule
+Overall & 1334 & 3795 & 2724 & 1768 & 758 & 299 \\
+\bottomrule
+\end{longtable}
+
+Table \ref{tab:yearWise_ni} shows the year-wise number of \gls{ni} cases in our sample. As expected, the pendency rate for older cases is lower than the newer cases.
+
+\begin{longtable}[h!]{@{}lrrr@{}}
+  \caption{Yearwise number of NI Act cases}\label{tab:yearWise_ni}\\
+\toprule
+\textbf{Year of filing} &  \textbf{Disposed} &  \textbf{Pending} &  \textbf{Total} \\
+\midrule\endhead
+2014  &      6293 &      391 &   6684 \\
+2015  &      6436 &      888 &   7324 \\
+2016  &      8562 &     2072 &  10634 \\
+2017  &      8904 &     3149 &  12053 \\
+2018  &      7274 &     4180 &  11454 \\
+\midrule
+Total &     37469 &    10680 &  48149 \\
+\bottomrule
+\end{longtable}
 
 \subsection{Approach to analysis} \label{sec:approach-analysis}
 
@@ -75,7 +105,7 @@ A fixed-effects regression model is an estimation technique that allows one to c
 
 To test the robustness of our findings, we do two additional checks. First, in Appendix \ref{sec:robustness}, we check if our results are consistent across time and across States. Then we use Kaplan-Meier non-parametric statistics to estimate a survival model for our cases. A survival probability is calculated for each interval as follows: the number of observations that survived (that did not face the event), divided by the number of observations that were at the risk of facing the event.\footcite{rich2010practical} In our case, this will be the number of cases that did not get closed divided by the number of cases that could have been closed. The Kaplan Meier plots, thus, depict the estimated probability of survival at each point in time or the probability of the case not getting completed at each point in time.
 
-\subsubsection{Text-mining} \label{sec:text-mining}
+\subsection{Identifying case characteristics} \label{sec:text-mining}
 
 To identify cases with the characteristics of interest, we analysed the interim and final orders using a pattern matching protocol and regular expressions implemented in Python 3.8. We supplemented this with the information reported in the case details downloaded from the eCourts database. In particular, we relied on the purpose of hearings and the nature of disposal. The characteristics and the strategy to identify whether they appear in a given case are as follows:
 
@@ -100,34 +130,39 @@ To identify cases with the characteristics of interest, we analysed the interim 
 
 \end{description}
 
-These case characteristics were represented as binary variables. As an example, if in a given case, the parties did not appear for a hearing, the Non-appearance variable takes the value 1. If the parties appeared at every hearing, we would mark it as 0. Similarly, for the Summons Trial variable, if the case was converted to a summons trial, it is marked as 1. Otherwise, it is marked as 0. Table \ref{tab:case_chars} shows the State-wise number of cases in which we were able to identify characteristics of interest.
+These case characteristics were represented as binary variables. As an example, if in a given case, the parties did not appear for a hearing, the Non-appearance variable takes the value 1. If the parties appeared at every hearing, we would mark it as 0. Similarly, for the Summons Trial variable, if the case was converted to a summons trial, it is marked as 1. Otherwise, it is marked as 0.
+
+\subsection{Overview of the data}
+\label{sec:overview-data}
+
+Table \ref{tab:case_chars} shows the State-wise number of cases in which we were able to identify characteristics of interest. The row totals are not expected to add up to the total cases in the respective state in the sample, because some cases can have more than one of the selected characteristics. As an illustration, a case may involve dishonour of multiple cheques and may be referred to mediation.
 
 {\footnotesize
- \begin{longtable}{@{}lrrrrr|r@{}}
+ \begin{longtable}{@{}lrrrrrr@{}}
  \caption{Cases with identified characteristics of interest}
  \label{tab:case_chars}\\
  \toprule
- \textbf{State} & \textbf{Non} & \textbf{Summons} & \textbf{Mediation} & \textbf{Jurisdiction} & \textbf{Multiplicity} & \textbf{Total} \\
- & \textbf{Appearance} & \textbf{Trial} & & \textbf{Issue} & & \\
+ \textbf{State} & \textbf{Non} & \textbf{Summons} & \textbf{Mediation} & \textbf{Jurisdiction} & \textbf{Multiplicity} & \textbf{Contested} \\
+ & \textbf{Appearance} & \textbf{Trial} & & \textbf{Issue} & &\\
  \midrule
  \endhead
- Andhra Pradesh & 1674 & 814 & 260 & 210 & 124 & 2640 \\
- Chandigarh & 701 & 408 & 204 & 278 & 53 & 731 \\
- Delhi & 2062 & 1359 & 1026 & 1045 & 208 & 5211 \\
- Goa & 381 & 78 & 90 & 33 & 18 & 399 \\
- Gujarat & 5125 & 391 & 402 & 3059 & 107 & 6756 \\
- Haryana & 5214 & 3376 & 1731 & 2109 & 540 & 5326 \\
- Himachal Pradesh & 864 & 351 & 506 & 299 & 33 & 1166 \\
- Karnataka & 5850 & 2002 & 1846 & 953 & 410 & 11195 \\
- Maharashtra & 5933 & 963 & 2546 & 3831 & 135 & 8880 \\
- Punjab & 5821 & 3134 & 2100 & 2281 & 382 & 5887 \\
- \midrule
- \textbf{Total} & \textbf{33625} & \textbf{12876} & \textbf{10711} &
- \textbf{14098} & \textbf{2010} & \textbf{48191}\\\bottomrule
+ Andhra Pradesh   &               1674 &          814 &            260 &               210 &                  124 &            753 \\
+ Chandigarh       &                701 &          408 &            204 &               278 &                   53 &            106 \\
+ Delhi            &               2062 &         1359 &           1026 &              1045 &                  208 &            521 \\
+ Goa              &                381 &           78 &             90 &                33 &                   18 &            109 \\
+ Gujarat          &               5125 &          391 &            402 &              3059 &                  107 &            797 \\
+ Haryana          &               5214 &         3376 &           1731 &              2109 &                  540 &            599 \\
+ Himachal Pradesh &                864 &          351 &            506 &               299 &                   33 &            113 \\
+ Karnataka        &               5850 &         2002 &           1846 &               953 &                  410 &           3615 \\
+ Maharashtra      &               5933 &          963 &           2546 &              3831 &                  135 &           1118 \\
+ Punjab           &               5821 &         3134 &           2100 &              2281 &                  382 &            552 \\
+ \bottomrule
 \end{longtable}
 }
 
-Notably, the State-wise numbers presented in \Cref{tab:case_chars} are likely underestimated. This is because orders cannot be parsed in approximately 36\% of the cases in our sample. Further, some courts do not adequately record details of the purpose of hearings and the nature of disposal.\footcite{damle2020_ecourtsData} Cases in which information regarding these characteristics could not be found were marked as not having those particular characteristics. In our manual check of approximately 500 cases, we did not find any false positives or false negatives. However, the data limitation above also limits our ability to reliably check for false negatives. This, in turn, means there could be many more cases that have the characteristics above but could not be identified as having them.
+The State-wise numbers presented in \Cref{tab:case_chars} are likely underestimated. This is because orders cannot be parsed in approximately 36\% of the cases in our sample. Further, some courts do not adequately record details of the purpose of hearings and the nature of disposal.\footcite{damle2020_ecourtsData} Cases in which information regarding these characteristics could not be found were marked as not having those particular characteristics. In our manual check of approximately 700 cases, we did not find any false positives or false negatives. However, the data limitation above also limits our ability to reliably check for false negatives. This, in turn, means there could be many more cases that have the characteristics above but could not be identified as having them.
+
+
 
 \subsubsection{Regression model specifications} \label{sec:model-selection}
 \input{model}
