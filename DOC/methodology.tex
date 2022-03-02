@@ -35,11 +35,10 @@ Punjab & 5885 & 24739 & 19.2 & 30624\\
 
 Table \ref{tab:state_disposal} shows the number of disposed and pending cases state-wise and the median time taken to dispose cases. According to \S~143(3) of the \gls{ni}, courts are required to, as far as reasonably possible, complete NI Act cases within six months, i.e. 180 days. However, as the table shows, the median time taken to dispose these cases is above the recommended limit in all states. Of the 37,479 disposed cases in the sample, 10,171 --- i.e. 27\% cases --- were disposed within the prescribed limit of six months.
 
-{\footnotesize
-\begin{longtable}{@{}lrrrr@{}}
+{\footnotesize \begin{longtable}{@{}lrrrr@{}}
  \caption{State-wise disposed cases and time taken to dispose}\label{tab:state_disposal}\\
 \toprule
-\textbf{State} & \multicolumn{1}{p{3cm}}{\textbf{Disposed cases}} & \multicolumn{1}{p{3cm}}{\textbf{Pending cases}} & \multicolumn{1}{p{3cm}}{\textbf{Median time taken}} & \multicolumn{1}{p{3cm}}{\textbf{Median hearings}} \\
+\textbf{State} &  \multicolumn{1}{p{2cm}}{\textbf{Disposed cases}} &  \multicolumn{1}{p{2cm}}{\textbf{Pending cases}} &  \multicolumn{1}{p{3cm}}{\textbf{Median days to dispose}} &  \multicolumn{1}{p{3cm}}{\textbf{Median hearings to dispose}} \\
 \midrule
 Andhra Pradesh & 2154 & 484 & 451 & 16 \\
 Chandigarh & 703 & 28 & 453 & 9 \\
@@ -55,15 +54,16 @@ Punjab & 5080 & 805 & 440 & 13 \\
 Overall & 37469 & 10680 & 395 & 11 \\
 \bottomrule
 \end{longtable}}
-
+}
 Table \ref{tab:state_pending} shows the pending cases across States and the duration of the pendency. The largest chunk of pending cases (35\%) has been pending for 2 to 3 years. There is state-wise variation in the distribution of pending cases. So the recommendation of the Supreme Court that the respective High Courts should find solutions specifically suited for their States, has merits.
 
 {\footnotesize
 \begin{longtable}{@{}lrrrrrr@{}}
  \caption{State-wise pending cases by duration}\label{tab:state_pending}\\
 \toprule
-\multirow{2}{*}{\textbf{State}} & \multicolumn{6}{c}{\textbf{Pending cases by duration (in years)}} \\ \cmidrule(l){2-7} 
- & (1, 2{]} & (2, 3{]} & (3, 4{]} & (4, 5{]} & (5, 6{]} & (6, 7{]} \\
+\multirow{2}{*}{\textbf{State}} &  \multicolumn{6}{c}{\textbf{Number of pending cases by duration (in years)}} \\
+\cmidrule{2-7}
+ &  (1, 2] &  (2, 3] &  (3, 4] &  (4, 5] &  (5, 6] &  (6, 7] \\
 \midrule
 \endhead
 Andhra Pradesh & 45 & 196 & 120 & 80 & 29 & 14 \\
@@ -104,7 +104,9 @@ Our objective is two-fold, to examine whether the interventions proposed by the 
 
 A fixed-effects regression model is an estimation technique that allows one to control for time-invariant unobserved variables that can be correlated with the observed characteristics, thus allowing us to estimate the effect size of identified (observed) characteristics on the total duration of cases. Notably, we only rely on disposed cases since pending cases in our data often do not have interim orders. By definition, they also do not have a final order. Thus, including such cases in the estimation can lead to higher uncertainty.
 
-To test the robustness of our findings, we do two additional checks. First, in Appendix \ref{sec:robustness}, we check if our results are consistent across time and across States. Then we use Kaplan-Meier non-parametric statistics to estimate a survival model for our cases. A survival probability is calculated for each interval as follows: the number of observations that survived (that did not face the event), divided by the number of observations at risk of facing the event.\footcite{rich2010practical} In our case, this will be the number of cases that did not get closed divided by the number of cases that could have been closed. The Kaplan Meier plots, thus, depict the estimated probability of survival at each point in time or the probability of the case not getting completed at each point in time.
+While hazard models, on the lines of \textcite{datta2017_itatDelays}, would be an ideal choice to use in such an analysis, we chose the fixed-effects model due to the peculiarities of our data. Case-characteristics for pending cases cannot be reliably detected because orders for those cases are not available in most instances. Further, given that most cases in our data-set are disposed, we did not expect significantly different results from using a fixed-effects model. Finally, a fixed-effects model gives coefficients that can be easily interpreted, whereas hazard models yield probabilities for a case to conclude after a given duration. The coefficient from the fixed-effects model is therefore easier to for policy reform than the results of a hazard model.
+
+To test the robustness of our findings, we do two additional checks. First, in Appendix \ref{sec:robustness}, we check if our results are consistent across time and across States. Then we use Kaplan-Meier non-parametric statistics to estimate a survival model for our cases. A survival probability is calculated for each interval as follows: the number of observations that survived (that did not face the event), divided by the number of observations that were at the risk of facing the event \autocite{rich2010practical}. In our case, this will be the number of cases that did not get closed divided by the number of cases that could have been closed. The Kaplan Meier plots, thus, depict the estimated probability of survival at each point in time or the probability of the case not getting completed at each point in time.
 
 \subsection{Identifying case characteristics} \label{sec:text-mining}
 
