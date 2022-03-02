@@ -157,9 +157,11 @@ For brevity, \cref{fig:proceeding_138} demonstrates the course of a proceeding i
 In this section we describe the robustness checks we performed to assess how confident we can be in the results of the fixed-effects model.
 
 \subsection{Consistency}
+\label{sec:consistency}
+As Tables \ref{tab:yearFE}, \ref{tab:hearFE}, \ref{tab:durationStateWise}, \ref{tab:hearingsStateWise} show, the year of filing and the state both have a significant effect on the duration of the case and the number of hearings required to dispose it. This supports our decision to control for state and year fixed effects in our main analysis.
 
  \begin{longtable}{lcc|ccc} 
- \caption{Disposal Days: Variation across years}
+ \caption{Disposal Days: Variation across years}\label{tab:yearFE}
  \\[-1.8ex]
  \hline \\[-1.8ex] 
  & \multicolumn{5}{c}{\textit{Dependent variable: Disposal days}} \\ 
@@ -179,7 +181,7 @@ In this section we describe the robustness checks we performed to assess how con
  D(Jurisdiction) & 180.482$^{***}$ & 231.023$^{***}$ & 269.201$^{***}$ & 313.779$^{***}$ & 318.416$^{***}$ \\ 
  & (9.022) & (8.876) & (10.238) & (12.909) & (13.564) \\ 
  & & & & & \\ 
- D(Multiple cheques) & 64.826$^{***}$ & 138.977$^{***}$ & 141.382$^{***}$ & 201.150$^{***}$ & 246.812$^{***}$ \\ 
+ D(Multiplicity) & 64.826$^{***}$ & 138.977$^{***}$ & 141.382$^{***}$ & 201.150$^{***}$ & 246.812$^{***}$ \\ 
  & (19.158) & (17.088) & (20.037) & (24.870) & (31.392) \\ 
  & & & & & \\ 
  D(Contested) & 5.510 & $-$12.717 & $-$59.490$^{***}$ & $-$75.624$^{***}$ & $-$71.797$^{***}$ \\ 
@@ -200,7 +202,7 @@ In this section we describe the robustness checks we performed to assess how con
 \pagebreak
 
  \begin{longtable}{lcc|ccc} 
- \caption{Number of hearings: Variation across years} 
+ \caption{Number of hearings: Variation across years}\label{tab:hearFE} 
  \\[-1.8ex] 
  \hline \\[-1.8ex] 
  & \multicolumn{5}{c}{\textit{Dependent variable: Number of hearings}} \\ 
@@ -220,7 +222,7 @@ In this section we describe the robustness checks we performed to assess how con
  D(Jurisdiction) & 2.973$^{***}$ & 4.911$^{***}$ & 5.133$^{***}$ & 7.023$^{***}$ & 6.345$^{***}$ \\ 
  & (0.244) & (0.235) & (0.262) & (0.350) & (0.352) \\ 
  & & & & & \\ 
- D(Multiple cheques) & 5.756$^{***}$ & 8.732$^{***}$ & 9.122$^{***}$ & 10.539$^{***}$ & 12.298$^{***}$ \\ 
+ D(Multiplicity) & 5.756$^{***}$ & 8.732$^{***}$ & 9.122$^{***}$ & 10.539$^{***}$ & 12.298$^{***}$ \\ 
  & (0.518) & (0.452) & (0.512) & (0.675) & (0.815) \\ 
  & & & & & \\ 
  D(Contested) & 5.157$^{***}$ & 4.213$^{***}$ & 3.139$^{***}$ & 2.230$^{***}$ & 1.341$^{***}$ \\ 
@@ -239,7 +241,7 @@ In this section we describe the robustness checks we performed to assess how con
  \pagestyle{empty}
  \begin{table}
  \centering
- \caption{Disposal Days: Variation across States}
+ \caption{Disposal Days: Variation across States}\label{tab:durationStateWise}
  \scalebox{0.75}{
  \hspace*{-0.7cm}
  \begin{tabular}{lcccccccccc} 
@@ -263,7 +265,7 @@ In this section we describe the robustness checks we performed to assess how con
  D(Jurisdiction) & 203.741$^{***}$ & 320.802$^{***}$ & 263.146$^{***}$ & 238.843$^{***}$ & 223.542$^{***}$ & 347.000$^{***}$ & 221.767$^{**}$ & 253.748$^{***}$ & 172.153$^{***}$ & 202.846$^{***}$ \\ 
  & (9.841) & (13.000) & (14.634) & (46.625) & (10.874) & (11.812) & (101.778) & (15.816) & (20.591) & (33.936) \\ 
  & & & & & & & & & & \\ 
- D(Multiple cheques) & 146.651$^{***}$ & 293.331$^{***}$ & 230.515$^{***}$ & 99.971 & 93.660$^{***}$ & 18.436 & 162.484$^{*}$ & 101.022$^{***}$ & 156.640$^{***}$ & 160.606$^{***}$ \\ 
+ D(Multiplicity) & 146.651$^{***}$ & 293.331$^{***}$ & 230.515$^{***}$ & 99.971 & 93.660$^{***}$ & 18.436 & 162.484$^{*}$ & 101.022$^{***}$ & 156.640$^{***}$ & 160.606$^{***}$ \\ 
  & (20.751) & (42.522) & (21.832) & (92.582) & (17.977) & (43.271) & (96.128) & (32.579) & (40.015) & (37.491) \\ 
  & & & & & & & & & & \\ 
  D(Contested) & 87.051$^{***}$ & $-$155.963$^{***}$ & $-$44.687$^{***}$ & $-$23.156 & 86.789$^{***}$ & $-$104.434$^{***}$ & $-$162.420$^{***}$ & $-$120.015$^{***}$ & 9.070 & $-$104.016$^{***}$ \\ 
@@ -284,7 +286,7 @@ In this section we describe the robustness checks we performed to assess how con
  \pagestyle{empty}
  \begin{table}
  \centering
- \caption{Number of hearings: Variation across States}
+ \caption{Number of hearings: Variation across States}\label{tab:hearingsStateWise}
  \scalebox{0.75}{
  \begin{tabular}{lcccccccccc} 
  \\[-1.8ex]
@@ -307,7 +309,7 @@ In this section we describe the robustness checks we performed to assess how con
  D(Jurisdiction) & 4.860$^{***}$ & 7.433$^{***}$ & 3.650$^{***}$ & 4.484$^{***}$ & 4.575$^{***}$ & 7.689$^{***}$ & 6.092$^{**}$ & 2.461$^{***}$ & 2.893$^{***}$ & 7.414$^{***}$ \\ 
  & (0.285) & (0.338) & (0.386) & (0.751) & (0.279) & (0.311) & (3.065) & (0.198) & (0.555) & (1.199) \\ 
  & & & & & & & & & & \\ 
- D(Multiple cheques) & 8.708$^{***}$ & 12.314$^{***}$ & 14.762$^{***}$ & 2.704$^{*}$ & 5.261$^{***}$ & $-$0.259 & 9.605$^{***}$ & 5.538$^{***}$ & 10.163$^{***}$ & 10.706$^{***}$ \\ 
+ D(Multiplicity) & 8.708$^{***}$ & 12.314$^{***}$ & 14.762$^{***}$ & 2.704$^{*}$ & 5.261$^{***}$ & $-$0.259 & 9.605$^{***}$ & 5.538$^{***}$ & 10.163$^{***}$ & 10.706$^{***}$ \\ 
  & (0.601) & (1.106) & (0.575) & (1.492) & (0.460) & (1.139) & (2.895) & (0.407) & (1.078) & (1.325) \\ 
  & & & & & & & & & & \\ 
  D(Contested) & 10.062$^{***}$ & $-$1.049$^{***}$ & 1.758$^{***}$ & 2.959$^{***}$ & 8.682$^{***}$ & 0.513 & $-$0.066 & 0.466$^{*}$ & 4.183$^{***}$ & 0.958 \\ 
@@ -326,20 +328,71 @@ In this section we describe the robustness checks we performed to assess how con
 \end{landscape}
 
 \subsection{Survival model}
+\label{sec:survivalModel}
+Survival models have their origins in clinical research. The models estimate the probability of an event occurring within a certain time given certain conditions are met. In our case, the model would estimate two things --- (1) the probability of a case remaining pending certain number of years after filing, and (2) how different case characteristics affect the probability of the case concluding before the end date of observations (i.e. 15th September 2021).\footcite[For a prior example of the use of hazard models for empirical judicial analysis, see][]{datta2017_itatDelays}
 
-As survival model allows us to describe patterns in case life-span, compare these patterns among groups, and build statistical models of the risk of case completion over time.
+As demonstrated in \textcite{datta2017_itatDelays}, we first the use Kaplan-Meier statistic to calculate the probability of the case surviving --- i.e. not concluding --- in a certain number of days after filing. We calculate this probability by controlling for the year of filing and the state. Figure \ref{fig:stateSurvival} shows the probability of a case remaining pending after a certain number of days, delineated by the state. Figure \ref{fig:yearSurvival} shows the same for the year of filing. The figures show that the year of filing and the state both have a significant effect on the duration of the case. As an example, cases in Himachal Pradesh take much longer to dispose than cases in Chandigarh. \textcolor{red}{Manish, please add an explanation for why the survival probability is higher for cases filed in later years. Because there are going to be more pending cases in later years?}
 
-\begin{figure}
+\begin{figure}[h!]
  \centering
- \caption{Survival probability of cases across States}
+ \caption{Survival probability of cases across States}\label{fig:stateSurvival}
  \includegraphics[width = \textwidth]{surv_states-1.png}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[h!]
  \centering
- \caption{Survival probability of cases across years}
+ \caption{Survival probability of cases across years}\label{fig:yearSurvival}
  \includegraphics[width = \textwidth]{surv_years-1.png}
 \end{figure}
+
+Next we estimate the effect of each case characteristic on the probability of the case getting disposed by the end of the observation period (i.e. 15th September 2021). Like in \textcite{datta2017_itatDelays}, we use the Cox-proportional hazard model to estimate the effect of each case characteristic. Table \ref{tab:survialProb} shows the results of the Cox-proportional hazard model. A negative coefficient indicates a lower probability of the case completing before the end of the observation period, and a positive coefficient indicates a higher probability of the case completing. As an example, jurisdictional issues and non-appearance of the accused reduce the probability of the case concluding (before 15th September 2021) by approximately 71\%, whereas the case being contested increases this probability by 55\%.
+
+\begin{table}[!ht]
+  \caption{Regression result: Probability of case completion}\label{tab:survialProb}
+  \footnotesize
+  \begin{tabular}{lr}
+    \\[-1.8ex] 
+    \hline \\[-1.8ex] 
+    & \multicolumn{1}{c}{\textit{Dependent variable: Probability of case completion}} \\ 
+    \cline{2-2} 
+    % \\[-1.8ex] & time \\
+    \hline \\[-1.8ex] 
+			
+    D(non-Appearance) & $-$0.712$^{***}$ \\ 
+    & (0.013) \\ 
+    % & \\
+    D(Summons)) & $-$0.286$^{***}$ \\ 
+    & (0.015) \\ 
+    % & \\
+    D(Mediation)) & 0.097$^{***}$ \\ 
+    & (0.013) \\ 
+    % & \\
+    D(Jurisdiction)) & $-$0.716$^{***}$ \\ 
+    & (0.013) \\ 
+    % & \\
+    D(Multiple cheques)) & $-$0.235$^{***}$ \\ 
+    & (0.027) \\ 
+    % & \\
+    D(D(Contested)) & 0.553$^{***}$ \\ 
+    & (0.015) \\ 
+    \hline \\[-1.8ex]
+    State & Y \\
+    Year & Y \\ 
+    \hline \\[-1.8ex]
+    Observations & 46,304 \\ 
+    R$^{2}$ & 0.274 \\ 
+    Max. Possible R$^{2}$ & 1.000 \\ 
+    Log Likelihood & $-$353,508.100 \\ 
+    Wald Test & 14,569.790$^{***}$ (df = 19) \\ 
+    LR Test & 14,819.270$^{***}$ (df = 19) \\ 
+    Score (Logrank) Test & 15,224.080$^{***}$ (df = 19) \\ 
+    \hline 
+    \hline \\[-1.8ex] 
+    \textit{Note:}  & \multicolumn{1}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+  \end{tabular}
+\end{table}
+
+The only result that contradicts the findings of the fixed-effects model is the effect of mediation on case duration. The results of Cox-proportional hazard model indicate that being referred to mediation increases the probability of the case concluding within the observation period by 9.7\%. However, as we have mentioned earlier, we cannot reliably identify case characteristics in pending cases. Therefore, this result has to be interpreted with some caution.
 
 %%% Local Variables:
 %%% mode: latex
