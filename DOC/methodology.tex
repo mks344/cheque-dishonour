@@ -54,7 +54,7 @@ Punjab & 5080 & 805 & 440 & 13 \\
 Overall & 37469 & 10680 & 395 & 11 \\
 \bottomrule
 \end{longtable}}
-}
+
 Table \ref{tab:state_pending} shows the pending cases across States and the duration of the pendency. The largest chunk of pending cases (35\%) has been pending for 2 to 3 years. There is state-wise variation in the distribution of pending cases. So the recommendation of the Supreme Court that the respective High Courts should find solutions specifically suited for their States, has merits.
 
 {\footnotesize
@@ -79,7 +79,8 @@ Punjab & 150 & 414 & 156 & 55 & 24 & 6 \\
 \midrule
 \textbf{Total} & 1334 & 3795 & 2724 & 1768 & 758 & 299 \\
 \bottomrule
-\end{longtable}}
+\end{longtable}
+}
 
 Table \ref{tab:yearWise_ni} shows the year-wise number of \gls{ni} cases in our sample. As expected, the pendency rate for older cases is lower than newer ones.
 
@@ -163,7 +164,7 @@ Table \ref{tab:case_chars} shows the State-wise number of cases in which we were
 \end{longtable}
 }
 
-The State-wise numbers presented in \Cref{tab:case_chars} are likely underestimated. This is because orders cannot be parsed in approximately 36\% of the cases in our sample. Further, some courts do not adequately record details of the purpose of hearings and the nature of disposal.\footcite{damle2020_ecourtsData} Cases in which information regarding these characteristics could not be found were marked as not having those particular characteristics. In our manual check of approximately 700 cases, we did not find any false positives or false negatives. However, the data limitation above also limits our ability to reliably check for false negatives. This, in turn, means there could be many more cases that have the characteristics above but could not be identified as having them.
+The State-wise numbers presented in \Cref{tab:case_chars} are likely underestimated. This is because orders cannot be parsed in approximately 36\% of the cases in our sample. Further, some courts do not adequately record details of the purpose of hearings and the nature of disposal \autocite{damle2020_ecourtsData}. Cases in which information regarding these characteristics could not be found were marked as not having those particular characteristics. In our manual check of approximately 700 cases, we did not find any false positives or false negatives. However, the data limitation above also limits our ability to reliably check for false negatives. This, in turn, means there could be many more cases that have the characteristics above but could not be identified as having them.
 
 \subsubsection{Regression model specifications} \label{sec:model-selection}
 \input{model}
