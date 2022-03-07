@@ -77,7 +77,7 @@ In this section we describe the robustness checks we performed to assess how con
 \label{sec:consistency}
 As Tables \ref{tab:yearFE}, \ref{tab:hearFE}, \ref{tab:durationStateWise}, \ref{tab:hearingsStateWise} show, the year of filing and the state both have a significant effect on the duration of the case and the number of hearings required to dispose it. This supports our decision to control for state and year fixed effects in our main analysis.
 
- \begin{longtable}{lcc|ccc} 
+{\footnotesize \begin{longtable}{lcc|ccc} 
  \caption{Disposal Days: Variation across years}\label{tab:yearFE}
  \\[-1.8ex]
  \hline \\[-1.8ex] 
@@ -115,10 +115,10 @@ As Tables \ref{tab:yearFE}, \ref{tab:hearFE}, \ref{tab:durationStateWise}, \ref{
  \hline \\[-1.8ex] 
  \multicolumn{6}{l}{\textit{Note:} $^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\
 \end{longtable}
-
+}
 \pagebreak
 
- \begin{longtable}{lcc|ccc} 
+{\footnotesize \begin{longtable}{lcc|ccc} 
  \caption{Number of hearings: Variation across years}\label{tab:hearFE} 
  \\[-1.8ex] 
  \hline \\[-1.8ex] 
@@ -152,7 +152,7 @@ As Tables \ref{tab:yearFE}, \ref{tab:hearFE}, \ref{tab:durationStateWise}, \ref{
  \hline \\[-1.8ex] 
  \multicolumn{6}{l}{\textit{Note:} $^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
  \end{longtable}
- 
+} 
  \begin{landscape}
  \pagestyle{empty}
  \begin{table}
@@ -244,22 +244,25 @@ Survival models have their origins in clinical research. The models estimate the
 
 As demonstrated in \textcite{datta2017_itatDelays}, we first use Kaplan-Meier statistics to calculate the probability of the case surviving --- i.e. not concluding --- in a certain number of days after filing. We calculate this probability by controlling for the year of filing and the state. Figure \ref{fig:stateSurvival} shows the probability of a case remaining pending after a certain number of days, delineated by the state. Figure \ref{fig:yearSurvival} shows the same for the year of filing. The figures show that the year of filing and the state both significantly affect the duration of the case. As an example, cases in Himachal Pradesh take much longer to dispose than cases in Chandigarh. \textcolor{red}{Manish, please add an explanation for why the survival probability is higher for cases filed in later years. Because there are going to be more pending cases in later years?}
 
-\begin{figure}
+\begin{figure}[h]
  \centering
  \caption{Survival probability of cases across States}\label{fig:stateSurvival}
- \includegraphics[width = \textwidth]{surv_states-1.png}
+ \includegraphics[width = 0.9\textwidth]{surv_states-1.png}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[h]
  \centering
  \caption{Survival probability of cases across years}\label{fig:yearSurvival}
- \includegraphics[width = \textwidth]{surv_years-1.png}
+ \includegraphics[width = 0.9\textwidth]{surv_years-1.png}
 \end{figure}
 
 Next, we estimate the effect of each case characteristic on the probability of the case getting disposed by the end of the observation period (i.e. 15th September 2021). Like in \textcite{datta2017_itatDelays}, we use the Cox-proportional hazard model to estimate the effect of each case characteristic. Table \ref{tab:survialProb} shows the results of the Cox-proportional hazard model. A negative coefficient indicates a lower probability of the case completing before the end of the observation period, and a positive coefficient indicates a higher probability of the case completing. As an example, jurisdictional issues and non-appearance of the accused reduce the probability of the case concluding (before 15th September 2021) by approximately 71\%, whereas the case being contested increases this probability by 55\%.
 
+The only result that contradicts the findings of the fixed-effects model is the effect of mediation on case duration. The results of the Cox-proportional hazard model indicate that being referred to mediation increases the probability of the case concluding within the observation period by 9.7\%. However, as we have mentioned earlier, we cannot reliably identify case characteristics in pending cases. Therefore, this result has to be interpreted with some caution.
+
+\newpage
  {\footnotesize
- \begin{longtable}{lr}
+ \begin{longtable}[h]{lr}
  \caption{Regression result: Probability of case completion}\label{tab:survialProb}\\
  \\[-1.8ex] 
  \hline \\[-1.8ex] 
@@ -295,7 +298,6 @@ Next, we estimate the effect of each case characteristic on the probability of t
  \textit{Note:} & \multicolumn{1}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
  \end{longtable}}
 
-The only result that contradicts the findings of the fixed-effects model is the effect of mediation on case duration. The results of the Cox-proportional hazard model indicate that being referred to mediation increases the probability of the case concluding within the observation period by 9.7\%. However, as we have mentioned earlier, we cannot reliably identify case characteristics in pending cases. Therefore, this result has to be interpreted with some caution.
 
 %%% Local Variables:
 %%% mode: latex
