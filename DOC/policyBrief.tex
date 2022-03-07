@@ -1,6 +1,6 @@
-\documentclass[12pt,a4paper]{article}
+\documentclass[11pt,a4paper]{article}
 
-\usepackage[margin=1in]{geometry}
+\usepackage[margin=1.5cm]{geometry}
 \usepackage[english]{babel}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
@@ -48,6 +48,7 @@
 
 \title{Characterising cheque dishonour cases in India: Causes for delays and policy implications}
 \author{Devendra Damle\thanks{Devendra Damle is a researcher at National Institute of Public Finance and Policy.} and Jitender Madaan\thanks{Jitender Madaan is a professor at Indian Institute of Technology, Delhi.} and Karan Gulati\thanks{Karan Gulati is a researcher at the Vidhi Centre for Legal Policy.}\\ and Manish Kumar Singh\thanks{Manish Kumar Singh is a professor at Indian Institute of Technology, Rourkee.} and Nikhil Borwankar\thanks{Nikhil Borwankar is a practicing advocate.}}
+\date{}
 
 \begin{document}
 \maketitle
@@ -58,95 +59,55 @@ Indian courts are clogged with large backlogs. As of 8th December 2021, over for
 
 Given the disagreement, any acceptance among policymakers that NI Act cases are the reason for India’s slow judiciary is likely to lead to misguided solutions. The misrepresentation could lead to diverting resources from other routes of judicial reform. There is a need for a more detailed analysis of the proportion of such cases, their causes, timelines, etc. This information can help judges and policymakers better target interventions.
 
-In 2020, the Supreme Court of India took on board a suo-motu case concerning the “expeditious trial of cases under section 138 of the Negotiable Instruments Act 1881”. Among other directions, it appointed Amici Curiae to assist the court to study processes to expedite disposal of complaints under § 138 of the NI Act. The Amici appointed by the Supreme Court also made recommendations to expedite the disposal of cases. This included (i) increasing the use of pre-and post-summons mediation, (ii) expediting the service of summons to reduce absconsion, (iii) addressing the multiplicity of proceedings, etc. 
+In 2020, the Supreme Court of India took on board a suo-motu case concerning the \emph{``expeditious trial of cases under section 138 of the Negotiable Instruments Act 1881''}. Among other directions, it appointed Amici Curiae to assist the court to study processes to expedite disposal of complaints under § 138 of the NI Act. The Amici appointed by the Supreme Court also made several recommendations to expedite the disposal of cases including expediting service of summons, setting up specialised courts, combining cases against the same accused into one, clarifying jurisdictional issues, encouraging more pre-trial and post-summons mediation, and limiting how many cases are converted into summons trials.\footcite{amicus2020_submission}
 
-This study, supported by the DAKSH Centre for Law and Technology, IIT-Delhi, attempts to assess the effect of suggested interventions. It first answers essential questions regarding the volume of such cases across differing courts. It then examines the determinants of case duration as identified by the Amici Curiae and the Supreme Court. In particular, the case characteristics chosen to be analysed were based on their importance and the feasibility of finding reliable information about them in the eCourts data. 
+This study, supported by the DAKSH Centre for Law and Technology, IIT-Delhi, attempts to assess the potential effect of the aforementioned proposed interventions. The study first answers essential questions regarding the volume of such cases across differing courts. It then examines the determinants of case duration by studying what effect each of the targets of the proposed interventions has on overall time to dispose and number of hearings required to dispose the case.
 
-They include – (i) the accused fails to appear before the court for at least one hearing; (ii) the case is converted to a summons trial; (iii) the case is referred to mediation; (iv) the case has jurisdictional issues and is transferred to another court, as a result; (v) the case contains a multiplicity of proceedings; and (vi) the case was contested.
+The case characteristics whose impact we have chosen to examine were determined based on two factors: (1) the importance of that characteristic and (2) the feasibility of finding reliable information about it in the eCourts data. The six chosen case characteristics map onto the aforementioned interventions proposed by the Supreme Court and Amici Curiae. The characteristics we chose are as follows:
+\begin{enumerate}
+\item The accused fails to appear before the court for at least one hearing;
+\item The case is converted to a summons trial;
+\item The case is referred to mediation;
+\item The case has jurisdictional issues and is transferred to another court, as a result;
+\item The case contains a multiplicity of proceedings --- either the dishonoured cheque was issued to satisfy multiple transactions, or multiple cheques were dishonoured;
+\item The case was contested.
+\end{enumerate}
 
-Table 1 summarises the expected effects of the identified case characteristics.
+These characteristics can be thought of as events in the life-cycle of a case. They are not mutually exclusive, and all or none of the events may occur in a given case. Each of the proposed interventions attempts to address one or more of these events in a case.
 
-\begin{longtable}{@{}lcc@{}}
-\caption{Expected effects of case characteristics}
-\label{tab:expected}\\
-\toprule
-\multicolumn{1}{c}{\multirow{2}{*}{\textbf{Case characteristic}}} & \multicolumn{2}{c}{\textbf{Expected effect}} \\ \cmidrule(l){2-3} 
-\multicolumn{1}{c}{} & \textbf{Duration} & \textbf{Hearings} \\ \midrule
-Non-appearance of the accused & + & + \\
-Conversion to summons trial & + & + \\
-Mediation & - & - \\
-Jurisdictional issues & + & + \\
-Multiplicity of proceedings & + & + \\
-Contested cases & + & + \\ \bottomrule
-\end{longtable}
+We used a systematic protocol to identify states for which we can gather case-level information reliably. We short-listed 8 states and 2 union territories, and then drew a random sample of 363,720 cases. We analysed the case-data as reported by eCourts, and the texts of the orders. The results of the study are summarised below.
 
-\section{Methodology}
+\section{Overview of NI Act litigation}
+\label{sec:findings}
 
-We first attempted to download a random sample of 100,000 cases filed between 1st January 2014 and 31st December 2018 across India from the eCourts database. We used regular expressions to check whether the “Act Name” field references the NI Act. This was the first level of case classification. We also used regular expressions to search for references to the NI Act, cheque bounce/dishonour, and § 138 in the interim and final order texts, where available. We tagged the cases found through this protocol as related to cheque dishonour under § 138 of the NI Act. Data availability and quality vary significantly across States. Consequently, we could not include all the States of India in the study. We identified the States to exclude from the analysis based on the following criteria:
+Table \ref{tab:sample_desc} shows a summary of the sample. Check dishonour cases in India represent approximately 13.2\% of courts' workload (pending and disposed). This number could be an underestimate because orders were either not available or could not be parsed in about 36\% of the cases in the sample. Some may be NI Act cases, even though the Act Name field does not say so.
 
-\begin{itemize}
-    \item States and Union Territories where we were unable to download sample data (this is because of data quality of the e-courts database);
-    \item States and Union Territories that do not classify any cases as relating to the Negotiable Instruments Act;
-    \item States and Union Territories where < 2\% of the final orders (as a proportion of total NI cases) are machine-readable and English.
-\end{itemize}
-
-Based on the criteria above, of the 29 States (including Jammu and Kashmir) and 7 Union Territories, the final sample covers 8 States and 2 Union Territories, shown in Table 2. 
-
-For these 10 States and Union Territories, we drew another random sample of 500,000 cases filed between 1st January 2014 and 31st December 2018. We were able to download case details for 4,68,855 cases successfully. We removed cases from District and Sessions courts since these courts hear appeals. This gave a sample of 363,720 cases. As with the preliminary analysis, we used pattern-matching based on regular expressions to identify cases related to NI Act. In total, the sample has 48,149 NI Act cases. We manually checked the NI Act classification for approximately 1700 cases to check for erroneous classification. There was one instance of a false positive and no false negatives. 
-
-Table 2 shows a summary of the sample. As shown, check dishonour cases in India represent approximately 13.2\% of courts’ workload (pending and disposed). This number could be underestimated because orders cannot be parsed in about 36\% of the cases in the sample. Some may be NI Act cases, even though the Act Name field does not say so.
-
-{\footnotesize \begin{longtable}{@{}lrrr|r@{}}
+{\footnotesize \begin{longtable}{@{}lrrrr|c@{}}
 \caption{Sample description}
 \label{tab:sample_desc}\\
 \toprule
-\textbf{State} & \textbf{NI Act cases} & \textbf{Non-NI Act cases} & \textbf{\%NI Act cases} & \textbf{Total cases}\\ \midrule
+\textbf{State} & \multicolumn{1}{p{1.5cm}}{\textbf{NI Act cases}} & \multicolumn{1}{p{1.5cm}}{\textbf{Non-NI Act cases}} & \multicolumn{1}{p{1.5cm}}{\textbf{\%NI Act cases}} & \textbf{Total cases} & \multicolumn{1}{p{3cm}}{\textbf{Median days to dispose NI Act cases}}\\ \midrule
 \endhead
-Andhra Pradesh & 2638 & 18567 & 12.4 & 21205\\
-Chandigarh & 731 & 1364 & 34.9 & 2095\\
-Delhi & 5202 & 14742 & 26.1 & 19944\\
-Goa & 399 & 2713 & 12.8 & 3112\\
-Gujarat & 6752 & 49476 & 12.0 & 56228\\
-Haryana & 5319 & 33542 & 13.7 & 38861\\
-Himachal Pradesh & 1164 & 11948 & 8.9 & 13112\\
-Karnataka & 11184 & 75807 & 12.9 & 86991\\
-Maharashtra & 8875 & 82673 & 9.7 & 91548\\
-Punjab & 5885 & 24739 & 19.2 & 30624\\
+Andhra Pradesh & 2638 & 18567 & 12.4 & 21205 & 451\\
+Chandigarh & 731 & 1364 & 34.9 & 2095 & 453\\
+Delhi & 5202 & 14742 & 26.1 & 19944 & 518\\
+Goa & 399 & 2713 & 12.8 & 3112 & 352\\
+Gujarat & 6752 & 49476 & 12.0 & 56228 & 323\\
+Haryana & 5319 & 33542 & 13.7 & 38861 & 488\\
+Himachal Pradesh & 1164 & 11948 & 8.9 & 13112 & 491\\
+Karnataka & 11184 & 75807 & 12.9 & 86991 & 218\\
+Maharashtra & 8875 & 82673 & 9.7 & 91548 & 520\\
+Punjab & 5885 & 24739 & 19.2 & 30624 & 440\\
 \midrule
-\textbf{Total} & \textbf{48149} & \textbf{315571} & \textbf{13.2} & \textbf{363720}\\ \bottomrule
+\textbf{Total} & \textbf{48149} & \textbf{315571} & \textbf{13.2} & \textbf{363720} & \textbf{395}\\ \bottomrule
 \end{longtable}
 }
 
-Table 3 shows the number of disposed and pending cases state-wise and the median time is taken to dispose of cases. According to § 143 (3) of the NI Act, courts are required to, as far as reasonably possible, complete NI Act cases within six months, i.e., 180 days. However, as the table shows, the median time to dispose of these cases is above the recommended limit in all states.
+According to § 143 (3) of the NI Act, courts are required to, as far as reasonably possible, complete NI Act cases within six months, i.e., 180 days. However, we find that the median time to dispose of these cases is above the recommended limit in all states. Moreover, of the pending cases, 35\% have been pending for 2 to 3 years.
 
-{\footnotesize
-\begin{longtable}{@{}lrrrr@{}}
- \caption{State-wise disposed cases and time taken to dispose}\label{tab:state_disposal}\\
-\toprule
-\textbf{State} & \multicolumn{1}{p{2.5cm}}{\textbf{Disposed cases}} & \multicolumn{1}{p{2.5cm}}{\textbf{Pending cases}} & \multicolumn{1}{p{2.5cm}}{\textbf{Median time taken}} & \multicolumn{1}{p{2.5cm}}{\textbf{Median hearings}} \\
-\midrule
-Andhra Pradesh & 2154 & 484 & 451 & 16 \\
-Chandigarh & 703 & 28 & 453 & 9 \\
-Delhi & 3910 & 1292 & 518 & 8 \\
-Goa & 280 & 119 & 352 & 16 \\
-Gujarat & 5183 & 1569 & 323 & 13 \\
-Haryana & 4241 & 1078 & 488 & 12 \\
-Himachal Pradesh & 673 & 491 & 547 & 16 \\
-Karnataka & 10221 & 963 & 218 & 6 \\
-Maharashtra & 5024 & 3851 & 520 & 19 \\
-Punjab & 5080 & 805 & 440 & 13 \\
-\midrule
-\textbf{Overall} & \textbf{37469} & \textbf{10680} & \textbf{395} & \textbf{11} \\
-\bottomrule
-\end{longtable}}
+\section{Determinants of duration and number of hearings}
 
-Moreover, of the pending cases, 35\% have been pending for 2 to 3 years. There is state-wise variation in the distribution of pending cases. Hence, the recommendation of the Supreme Court that the respective High Courts find solutions suited explicitly for their States has merit.
-
-We analysed interim and final orders using a pattern matching protocol and regular expressions to identify cases with specific characteristics to increase case duration. We supplemented this with the information reported in the case details downloaded from the eCourts database. In particular, we relied on the purpose of hearings and the nature of disposal. We then used a fixed-effects regression model to estimate the effect size of these characteristics on the total time of the case. For the empirical analysis, we only used the 37,498 disposed of cases.
-
-\section{Result and discussion}
-
-Table 4 shows the effect of the identified case characteristics. The State in which the case is filed has a large and statistically significant impact on the case duration. Controlling for the State-level effects, all but one of the selected case characteristics significantly increase the case duration. As with the total time to dispose of the cases, the State in which the case is filed has a large and statistically significant effect on the number of hearings. Controlling for the State-level effects, all selected case characteristics significantly increase the number of hearings required to dispose of the case.
+Table \ref{tab:summary_results} shows the effect of the identified case characteristics, controlling for the State-level effects. Cases where the accused fails to appear take an additional 213 days and 7 hearings to dispose, all else being equal. Similarly, cases that are run as summons trials take 111 days and 7.2 hearings more than summary trials. Cases with jurisdictional issues take 287 days and 5.7 hearings more to dispose than cases without these issues. Cases with multiplicity of proceedings take an additional 171 days and 10 hearings to dispose than those without. Contested cases take fewer days to dispose than uncontested cases, even though they take more hearings.
 
 {\footnotesize \begin{longtable}{@{}p{2.5cm}rrrrr}
  \caption{Summary of results}\label{tab:summary_results}\\
@@ -172,34 +133,57 @@ Table 4 shows the effect of the identified case characteristics. The State in wh
 \end{longtable}
 }
 
-The delays resulting from the respective characteristics affect a significant proportion of NI Act cases. Since NI Act cases constitute 13.2\% of courts’ workload, these delays are bound to contribute to the overall delays in courts. They affect the overall pendency in the judiciary.
+So, most of the intended targets of the Amici Curiae's and Supreme Court's proposals do increase the duration of NI Act cases. So, any interventions that can reduce the proportion of cases converted into summons trials, prevent cases from being filed in the wrong jurisdiction, ensure the presence of the accused, reduce the multiplicity of proceedings, and increase the rate at which cases are heard (e.g.: increasing the number of courts) will reduce delays in these cases and will also reduce the number of hearings required to dispose of them.
 
-For example, suppose the problem of accused persons not appearing before the court is addressed. In that case, all else being equal, the total duration of over 9\% of cases would reduce by 213 days, and courts will have to allocate seven fewer hearings per case. Similarly, if jurisdictional issues are addressed, the total duration of close to 4\% of cases would reduce by 287 days, and courts will have to allocate six fewer hearings per case.
+A striking departure from this are cases referred to mediation. These cases take 108 days more to dispose than cases not referred to mediation. Further, this likely does not result in time saved for judges, because they also take on average 3.3 hearings more to dispose. So, referring more NI Act cases to mediation may in fact increase delays and burden courts even more.
 
-As per the National Judicial Data Grid, as of January 2022, there were 3,57,72,846 total original pending cases in subordinate courts in India. Assuming the proportions and ratios of the analysis and results hold good for the country as a whole, 13.2\% of these cases would relate to the NI Act, which would amount to 47,39,902 cases. To put the numbers in the table into context, ensuring the accused’s presence can reduce 2,32,58,415 hearings across courts in the country. Similarly, if all NI Act cases are disposed of summarily, courts can avoid 90,86,676 hearings across the country.
+\section{Closer look at mediation}
+\label{sec:closer-look-at}
+
+The mediation process concludes in a successful settlement in a vast majority of the cases, as shown in Table \ref{tab:mediation}. The case gets sent back to the court for adjudication only in 21.4\% of instances. Read with the result on the duration of cases referred to mediation being longer than other cases; this means that the delays result from issues in the mediation process itself, and not (as the literature in other jurisdictions indicates) in whether or not the parties choose to settle.
+
+Precisely identifying issues with the mediation process requires further investigation. However, until these issues are properly identified and understood, courts referring \gls{ni} cases to mediation will likely result in greater delays and pendency.
+
+{\footnotesize \begin{longtable}{@{}clrrr@{}}
+ \caption{Outcomes of cases referred to mediation}
+ \label{tab:mediation}\\
+ \toprule
+ \textbf{Disposal type} & \multicolumn{1}{c}{\textbf{Disposal sub-type}} & \multicolumn{1}{c}{\textbf{Total cases}} & \multicolumn{1}{c}{\textbf{Percentage}} & \multicolumn{1}{p{3cm}}{\textbf{Median duration (in days)}} \\
+ \midrule \endhead
+ \multirow{3}{*}{Dismissed} & other & 478 & 5.46 & 710 \\
+ & settlement & 8 & 0.09 & 512 \\
+ & withdrawn & 2942 & 33.58 & 491 \\
+ \midrule
+ \multirow{4}{*}{Disposed} & compounded & 459 & 5.24 & 638 \\
+ & other & 1395 & 15.92 & 723 \\
+ & settlement & 2945 & 33.62 & 527 \\
+ & withdrawn & 213 & 2.43 & 462 \\
+ \midrule
+ Other & other & 320 & 3.65 & 752 \\
+ \midrule
+ \multicolumn{2}{c}{\textbf{Total}} & \textbf{8760} & \textbf{100.00} & \multicolumn{1}{l}{\textbf{-}} \\
+ \bottomrule \multicolumn{5}{p{11cm}}{{\footnotesize \emph{Note:
+ The total is less than the total cases referred to mediation owing to the limitations in the data on disposal type and filing/disposal dates.}}}
+ \end{longtable}}
+
+This result read with the fact that contested cases take fewer days to dispose indicate that judges might be more efficient at resolving these cases than mediation forums. As a result, increasing the number of special NI Act courts might have the intended effect of raising disposal rates and reducing pendency, rather than more mediation.
+
+\section{Potential impact on case-loads} \label{sec:impact-case-loads}
+
+The delays resulting from the respective characteristics affect a significant proportion of \gls{ni} cases. Since \gls{ni} cases constitute 13.2\% of courts' workload, these delays are bound to contribute to the overall delays in courts. They affect the overall pendency in the judiciary. 
+
+For example, if the problem of accused persons not appearing before the court is addressed, all else being equal, the total duration of over 9\% of cases would reduce by 213 days, and courts will have to allocate 7 fewer hearings per case. Similarly, if jurisdictional issues are addressed, the total duration of close to 4\% of cases would reduce by 287 days, and courts will have to allocate 6 fewer hearings per case.
+
+As per the \gls{njdg}, as of January 2022, there were 3,57,72,846 total original pending cases in subordinate courts in India. Assuming the proportions and ratios of our analysis and results hold good for the country as a whole, 13.2\% of these cases would relate to the \gls{ni}, which would amount to 47,39,902 cases. To put the numbers into context, ensuring the presence of the accused can lead to reducing 2,32,58,415 hearings across courts in the country.\footnote{This assumes the proportion of the distribution of case characteristics holds good for the country as a whole.}
+
+Similarly, if all \gls{ni} cases are disposed summarily, courts across the country can avoid 90,86,676 hearings. Further, if none of the cases had jurisdictional issues, 78,48,857 hearings could be avoided. While the Supreme Court has provided clarity on the procedure to be followed when the accused does not ordinarily reside within a court's jurisdiction, there is a need for further analysis on how to reduce such cases in the first place, since parties need not ordinarily reside and have bank accounts within the jurisdiction of the same court.
+
+In the same vein, referring \gls{ni} cases to mediation could be adding 34,40,884 hearings to the courts across the country. All these hearings can be avoided if the courts tried and disposed of these cases. The difference is significant and highlights why it is necessary to support policy decisions with robust empirical studies.
 
 \section{Conclusion}
 
-The Amici Curiae and Supreme Court gave several recommendations to reduce delays and pendency of cheque-dishonour. We have been able to test the likely effect of 6 of the targets of these interventions, viz — trials being run as summons trials, non-appearance by the accused, jurisdictional issues, reference to mediation, and multiplicity of proceedings, and impact of setting up additional NI Act courts. Table 5 summarises the expected and observed effects of the identified case characteristics.
+We have been able to test the likely effect of 6 of the targets of the interventions proposed by the Supreme Court and Amici Curiae. We find that most of the recommendations have the correct targets and, if implemented well, will likely reduce pendency in NI Act cases. At the same time, one recommendation, viz. referring more cases to mediation, may be counter-productive. While the reasons for why mediation may be adding to pendency is unclear at this point, this study does highlight the importance of, and need for, more empirical judicial research.
 
-\begin{longtable}{@{}lcc|cc@{}}
-\caption{Expected and observed effects of case characteristics}
-\label{tab:observed}\\
-\toprule
-\multicolumn{1}{c}{\multirow{2}{*}{\textbf{Case characteristic}}} & \multicolumn{2}{c}{\textbf{Expected effect}} & \multicolumn{2}{c}{\textbf{Observed effect}} \\ \cmidrule(l){2-5}
-\multicolumn{1}{c}{} & \textbf{Duration} & \textbf{Hearings} & \textbf{Duration} & \textbf{Hearings}\\ \midrule
-Non-appearance of the accused & + & + & + & + \\
-Conversion to summons trial & + & + & + & +\\
-Mediation & - & - & + & + \\
-Jurisdictional issues & + & + & + & + \\
-Multiplicity of proceedings & + & + & + & +\\
-Contested cases & + & + & - & +\\ \bottomrule
-\end{longtable}
-
-Most of the intended targets of the Amici Curiae’s and Supreme Court’s proposals do affect the duration of NI Act cases. So, any interventions that can reduce the proportion of cases converted into summons trials, prevent cases from being filed in the wrong jurisdiction, ensure the presence of the accused, and reduce the multiplicity of proceedings will reduce delays in these cases and will also reduce the number of hearings required to dispose of them.
-
-However, cases referred to mediation take significantly longer to dispose. Referring more NI Act cases to mediation may increase delays and burden courts even more. Further, there appear to be issues with the mediation process itself because not many cases return to the courts for adjudication due to the mediation failing. At the same time, contested cases take fewer days to dispose of even though they require more hearings. This indicates that judges might be more efficient at resolving these cases than mediation forums. As a result, increasing the number of special NI Act courts might have the intended effect of rising disposal rates and reducing pendency.
-
-Policy-making and administration are research-dependent processes. Better research requires better data. Therefore, courts should record better data about case characteristics and case flow. This will enable researchers and courts alike to conduct better judicial impact assessments and identify bottlenecks in existing processes and problematic provisions in laws. Courts, in turn, can use these analyses to improve procedures and administration and ensure better justice delivery.
+Policy-making and administration are research-dependent processes. Better research requires better data. Therefore, courts should also institute mechanisms to record better data about case characteristics and case flow. This will enable researchers and courts alike to conduct better judicial impact assessments and identify bottlenecks in existing processes and problematic provisions in laws. Courts, in turn, can use these analyses to improve procedures and administration and ensure better justice delivery.
 
 \end{document}

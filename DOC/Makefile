@@ -19,3 +19,17 @@ paper:
 	pdflatex paper_chequeDishonour.tex
 	pdflatex paper_chequeDishonour.tex
 	make clean
+
+brief:
+	make clean
+	pdflatex policyBrief.tex
+	pdflatex policyBrief.tex
+	pdflatex policyBrief.tex
+	makeglossaries policyBrief
+	pdflatex policyBrief.tex
+	pdflatex policyBrief.tex
+	biber policyBrief
+	pdflatex policyBrief.tex
+	pdflatex policyBrief.tex
+	pdflatex policyBrief.tex
+	make clean
