@@ -53,7 +53,18 @@ For brevity, \cref{fig:proceeding_138} demonstrates the course of a proceeding i
 
 \section{Criteria for sample selection} \label{sec:sample_selection}
 
-\textcolor{red}{Manish, please populate the table below.}
+Steps: 
+\begin{enumerate}
+\item Remove States where we are unable to download/pick any information (Arunachal Pradesh, Andaman and Nicobar Islands, and Nagaland)
+\item Remove States where we don't get any NI cases (Ladakh, Sikkim, Mizoram, Meghalaya, and Manipur dropped)
+\item In our dataset, we have only one NI case in DNH at Silvasa. So we drop DNH at Silvasa.
+\item In case of Puducherry, we don't find any interim or final order for the NI cases.
+\item Given our limitation to process information recorded in regional language, we dropped states where less than 2\% of the final orders (as proportion of total NI cases) were in English (Daman and Diu, Uttarakhand, Uttar Pradesh, Rajasthan, Tripura, Chhattisgarh, Jammu and Kashmir, and Bihar dropped)
+\item We also drop states where NI cases in which interim or final order is available in english represent less than 1\% of the total cases (Telangana, Jharkhand, Kerala, Tamil Nadu, Assam, Orissa, West Bengal and Madhya Pradesh dropped)
+\item So we were left with 2 UTs - Chandigarh and Delhi, 2 small states - Goa and Himachal Pradesh, 2 mid size states - Punjab and Haryana, 4 large states - Karnataka, Gujarat, Maharashtra, and Andhra Pradesh. The NI cases as a proportion of total cases vary from 7.35\% in Himachal Pradesh to 22.06% in Chandigarh in our final data. The cases where final order is available in English as a proportion of total NI cases varies from 23.11\% in Gujarat to 80% in Chandigarh. In terms of data quality, Chandigarh, Punjab, Haryana, and Karnataka tops the chart. 
+\end{enumerate}
+
+\textcolor{red}{Devendra: I have added the text above. Have a look and please populate the table below.}
 
 \begin{longtable}{p{0.32\textwidth}p{0.6\textwidth}}
 \label{tab:sample_selection}
