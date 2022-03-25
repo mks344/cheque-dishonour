@@ -1,3 +1,7 @@
+We use the fixed-effects regression model to estimate the effect size of these characteristics on the total duration of the case. A fixed-effects regression model is an estimation technique that allows one to control for time-invariant unobserved variables that can be correlated with the observed characteristics, thus allowing us to estimate the effect size of identified (observed) characteristics on the total duration of cases. Notably, we only rely on disposed cases since pending cases in our data often do not have interim orders. By definition, they also do not have a final order. Thus, including such cases in the estimation can lead to higher uncertainty. For the empirical analysis, we only used the 37,498 disposed cases. 
+
+While hazard models, on the lines of \textcite{datta2017_itatDelays}, would be an ideal choice to use in such an analysis, we chose the fixed-effects model due to the peculiarities of our data. Case-characteristics for pending cases cannot be reliably detected because orders for those cases are not available in most instances. Further, given that most cases in our data-set are disposed, we did not expect significantly different results from using a fixed-effects model. Finally, a fixed-effects model gives coefficients that can be easily interpreted, whereas hazard models yield probabilities for a case to conclude after a given duration. The coefficient from the fixed-effects model is therefore easier to for policy reform than the results of a hazard model.
+
 Table \ref{tab:summary_results} shows the summary of results, and Table \ref{tab:disposal_regression} shows the results of the fixed effects regression to predict the effects on total case duration (in days). The State in which the case is filed has a large and statistically significant effect on the case duration. Controlling for the State-level effects, all but one of the selected case characteristics significantly increase the case duration.
 
 {\footnotesize \begin{longtable}{@{}p{2.5cm}rrrrr}
@@ -108,72 +112,26 @@ The results for each of the case characteristics are discussed in detail in the 
 \subsection{Non-appearance of accused}
 \label{sec:non-appe-accus-1}
 
-Table \ref{tab:nonAppearance_yearWise} shows the number of cases in the sample in which the accused failed to appear in at least one of the hearings. It appears that this is a widespread occurrence, and consistently so, over the entire observation period.
-
-\begin{longtable}{@{}lrrr@{}}
- \caption{Cases where the accused was absent for at least one hearing}\label{tab:nonAppearance_yearWise}\\
-\toprule
-\multirow{2}{*}{Year} & \multirow{2}{*}{Total NI Act cases} & \multicolumn{2}{c}{Non Appearance}\\
-\cmidrule{3-4}
-&& Number of cases & Percentage \\
-\midrule\endhead
-2014 & 6684 & 4302 & 64.4 \\
-2015 & 7324 & 5241 & 71.6 \\
-2016 & 10634 & 7527 & 70.8 \\
-2017 & 12053 & 8628 & 71.6 \\
-2018 & 11454 & 7927 & 69.2 \\
-\bottomrule
-\end{longtable}
-
-We expected cases with incidences of absence by the accused would take more days and more hearings to dispose. The results, shown in Table \ref{tab:summary_results}, indicate that non-appearance of the accused typically adds 213 days to the total case duration. Further, non-appearance of the accused typically adds 7 hearings to the total hearings required to dispose a case. Both these findings are in line with what we expected.
+The results, shown in Table \ref{tab:summary_results}, indicate that non-appearance of the accused typically adds 213 days to the total case duration. Further, non-appearance of the accused typically adds 7 hearings to the total hearings required to dispose a case. Both these findings are in line with what we expected.
 
 Therefore, any interventions by courts to ensure the accused's presence will help reduce the case durations and the number of hearings to dispose. The suggested interventions include serving notice of summons through digital media, such as instant messaging, email, and the Supreme Court's automated notice-service software.
 
 Ordinarily, if the accused fails to appear before the court repeatedly, the court issues a bailable warrant to produce them in court. If the accused still fails to appear, the court issues a non-bailable warrant under \S~70 of the Code of Criminal Procedure (CrPC). This gives the police the power to arrest the accused anytime and anywhere. The police are also given the authority to forcibly open or break down the doors and walls of the home or the hiding place of the accused. If the accused still fails to appear in court even after the arrest warrants have been issued without bail, the judge can declare the accused to be a ``criminal accused'' under \S\S~82 and 83 of the CrPC. It can then authorise the attachment and sale of the accused's property to recover the disputed amount. One way of reducing delays caused due to the non-appearance may to reduce the time taken to conduct such processes, compelling the accused's presence.
 
+\subsection{Jurisdictional issues}
+\label{sec:jurisd-issu}
+
+The results, shown in Table \ref{tab:summary_results}, indicate that jurisdictional issues typically add 287 days to the total case duration. Further, jurisdictional issues typically add 5.7 hearings to the total hearings required to dispose a case. Both these findings are in line with what we expected.
+
 \subsection{Conversion to summons trial}
 \label{sec:conv -summ-trial-1}
 
-Table \ref{tab:summons_yearWise} shows the number of cases in the sample in which the case was converted from a summary trial to a summons trial. The proportion of such cases as a percentage of the total has grown over the observation period.
-
-\begin{longtable}{@{}lrrr@{}}
- \caption{Cases converted to summons trials}\label{tab:summons_yearWise}\\
- \toprule
- \multirow{2}{*}{Year} & \multirow{2}{*}{Total NI Act cases} & \multicolumn{2}{c}{Summons trial}\\
- \cmidrule{3-4}
- && Number of cases & Percentage \\
- \midrule\endhead
- 2014 & 6684 & 1251 & 18.7 \\
- 2015 & 7324 & 1880 & 25.7 \\
- 2016 & 10634 & 2814 & 26.5 \\
- 2017 & 12053 & 3542 & 29.4 \\
- 2018 & 11454 & 3389 & 29.6 \\
- \bottomrule
-\end{longtable}
-
-We expected cases converted to summons trial to take more days and more hearings to dispose. The results, shown in Table \ref{tab:summary_results}, indicate that conversion to a summons trial typically adds 111 days to the total case duration. Further, conversion to a summons trial typically adds 7.2 hearings to the total hearings required to dispose a case. Both these findings are in line with what we expected.
+The results, shown in Table \ref{tab:summary_results}, indicate that conversion to a summons trial typically adds 111 days to the total case duration. Further, conversion to a summons trial typically adds 7.2 hearings to the total hearings required to dispose a case. Both these findings are in line with what we expected.
 
 The Supreme Court and the Amici Curiae recommend that most cases be tried summarily. If courts implement this, they can significantly reduce the duration of cheque dishonour cases. The mechanism that the Supreme Court proposes is for courts to not convert cases to summons trials unless the accused presents a plausible defence. Further, the court has to record, in writing, its reasons for conducting the case as a summons trial. This recommendation, by itself, may be of limited use, unless an audit mechanism is put in place to assess how often and for what reason cases are converted to summons trials, and whether it was necessary to do so. This will also necessitate institutionalising a mechanism for regular judicial impact assessments.
 
 \subsection{Cases referred to mediation}
 \label{sec:mediation}
-
-Table \ref{tab:mediation_yearWise} shows the number of cases in the sample in which the accused failed to appear in at least one of the hearings. The proportion of such cases is considerable over the entire observation period.
-
-\begin{longtable}{@{}lrrr@{}}
- \caption{Cases referred to mediation}\label{tab:mediation_yearWise}\\
- \toprule
- \multirow{2}{*}{Year} & \multirow{2}{*}{Total NI Act cases} & \multicolumn{2}{c}{Mediation}\\
- \cmidrule{3-4}
- && Number of cases & Percentage \\
- \midrule\endhead
- 2014 & 6684 & 997 & 14.9 \\
- 2015 & 7324 & 1521 & 20.8 \\
- 2016 & 10634 & 2609 & 24.5 \\
- 2017 & 12053 & 3100 & 25.7 \\
- 2018 & 11454 & 2484 & 21.7 \\
- \bottomrule
-\end{longtable}
 
 The results, shown in Table \ref{tab:summary_results}, indicate that a case being referred to mediation typically adds 108 days to the total time required to dispose it. Further, the case being referred to mediation typically adds 3.3 hearings to the number of hearings required to dispose the case. These findings run counter to our hypotheses that cases referred to mediation take less time and fewer hearings to dispose. This also means that the recommendation by the Amici Curiae, calling for more cases to be referred to mediation, will not reduce the delays in cheque dishonour cases. They will have the opposite effect.
 
@@ -205,83 +163,10 @@ Precisely identifying issues with the mediation process requires further investi
 
 One caveat that we need to add here is that according to the practising advocates we consulted, the stage at which the case is referred to mediation has a bearing on whether or not mediation will lead to delays. Further, the court's reasons (or lack thereof) for delaying the reference to mediation or delays in successive scheduling of hearings may have a confounding effect. However, a deeper analysis of whether courts delay scheduling for legitimate reasons requires an analysis of courts' order sheets for each hearing. This information is, unfortunately, not available on the eCourts platform. To the best of our knowledge, most courts do not digitise this information. Therefore, we cannot further analyse this matter with the available data.
 
-\subsection{Jurisdictional issues}
-\label{sec:jurisd-issu}
-
-Table \ref{tab:jurisdiction_yearWise} shows the number of cases in the sample in which there was a jurisdictional issue. The proportion of such cases as a percentage of the total, though significant, has fallen slightly over the observation period. The increase in cases with jurisdictional issues in 2016 is likely to be a consequence of the amendment in 2015, which resulted in more cases being transferred to courts that would now have appropriate jurisdiction.
-
-\begin{longtable}{@{}lrrr@{}}
- \caption{Cases with jurisdictional issues}\label{tab:jurisdiction_yearWise}\\
- \toprule
- \multirow{2}{*}{Year} & \multirow{2}{*}{Total NI Act cases} & \multicolumn{2}{c}{Jurisdictional issue}\\
- \cmidrule{3-4}
- && Number of cases & Percentage \\
- \midrule\endhead
- 2014 & 6684 & 2089 & 31.3 \\
- 2015 & 7324 & 2229 & 30.4 \\
- 2016 & 10634 & 3520 & 33.1 \\
- 2017 & 12053 & 3360 & 27.9 \\
- 2018 & 11454 & 2900 & 25.3 \\
- \bottomrule
-\end{longtable}
-
-We expected cases with jurisdictional issues to take more days and more hearings to dispose. The results, shown in Table \ref{tab:summary_results}, indicate that jurisdictional issues typically add 287 days to the total case duration. Further, jurisdictional issues typically add 5.7 hearings to the total hearings required to dispose a case. Both these findings are in line with what we expected.
-
-While we had not originally set out to test the effectiveness of the amendments to the NI Act, our dataset allowed us to test the effect of the year (using fixed-effects regression) on the total duration of the case and total hearings required to dispose. This can serve as a suitable proxy for the effect of the amendment itself. The results --- given in Table \ref{tab:amendments_effect} --- show that there was a drastic decrease in the total case duration and the number of hearings required to dispose them for cases filed in 2017 and 2018. This indicates that the amendments to the NI Act made in 2015 --- to clarify the geographical jurisdictions --- may have had an impact on reducing the case duration and number of hearings to dispose cheque dishonour cases. This further confirms our result that solving jurisdiction related issues can reduce the overall duration of the NI Act cases.
-
-\begin{table}
- \centering
- \caption{Effect of NI Act amendments on case
- disposal}\label{tab:amendments_effect}
- \footnotesize
- \begin{tabular}{@{\extracolsep{5pt}}lcc}
- \\[-1.8ex] 
- \hline \\[-1.8ex] 
- \multirow{2}{*}{Year} & \multicolumn{2}{c}{\textit{Dependent variable}} \\ 
- \cline{2-3} 
- \\[-1.8ex] & Disposal days & No. of hearings \\ 
- \hline \\[-1.8ex] 
- D(2015) & 24.202$^{***}$ & 1.020$^{***}$ \\ 
- & (6.902) & (0.182) \\ 
- & & \\ 
- D(2016) & 6.439 & $-$0.188 \\ 
- & (6.652) & (0.176) \\ 
- & & \\ 
- D(2017) & $-$106.686$^{***}$ & $-$2.475$^{***}$ \\ 
- & (6.612) & (0.175) \\ 
- & & \\ 
- D(2018) & $-$197.606$^{***}$ & $-$4.118$^{***}$ \\ 
- & (6.955) & (0.184) \\
- \hline \\[-1.8ex] 
- Observations & 35,427 & 35,427 \\ 
- R$^{2}$ & 0.241 & 0.368 \\ 
- Adjusted R$^{2}$ & 0.241 & 0.367 \\ 
- \hline \\[-1.8ex] 
- \textit{Note:} & \multicolumn{2}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
- \end{tabular} 
-\end{table}
-
 \subsection{Multiplicity of proceedings}
 \label{sec:mult-proc}
 
-Table \ref{tab:mult_yearWise} shows the number of cases in the sample in which there was a multiplicity of proceedings. As a percentage of the total, the proportion of such cases is small. However, as \Cref{tab:state_multiplicity} shows, the burden caused due to multiplicity varies across States.
-
-\begin{longtable}{@{}lrrr@{}}
- \caption{Cases with a multiplicity of proceedings}\label{tab:mult_yearWise}\\
-\toprule
-\multirow{2}{*}{Year} & \multirow{2}{*}{Total NI Act cases} & \multicolumn{2}{c}{Multiplicity of proceedings}\\
-\cmidrule{3-4}
-&& Number of cases & Percentage \\
-\midrule\endhead
-2014 & 6684 & 259 & 3.9 \\
-2015 & 7324 & 382 & 5.2 \\
-2016 & 10634 & 544 & 5.1 \\
-2017 & 12053 & 515 & 4.3 \\
-2018 & 11454 & 310 & 2.7 \\
-\bottomrule
-\end{longtable}
-
-We expected cases with a multiplicity of proceedings to take more days and more hearings to dispose. The results, shown in Table \ref{tab:summary_results}, indicate that multiplicity of proceedings typically adds 171 days to the total case duration. Further, a multiplicity of proceedings typically adds 10 hearings to the total hearings required to dispose a case. Both these findings are in line with what we expected.
+The results, shown in Table \ref{tab:summary_results}, indicate that multiplicity of proceedings typically adds 171 days to the total case duration. Further, a multiplicity of proceedings typically adds 10 hearings to the total hearings required to dispose a case. Both these findings are in line with what we expected.
 
 This may be due to the excess coordination required on the part of the judiciary. To address this challenge, \citetitle{sc2020_138}, the Amici Curiae appointed by the Supreme Court recommended that:
 
@@ -318,24 +203,7 @@ While on average, 4.2\% of the cases in our sample include a multiplicity of pro
 \subsection{Contested cases}
 \label{sec:contested-cases}
 
-Table \ref{tab:mult_yearWise} shows the number of cases in the sample which were contested by the accused. The proportion of such cases is significant but appears to have declined over the years. This may be due to an increased tendency of parties to compound a case.\footnote{\S~147 of the Negotiable Instruments Act provides that every offence punishable under the Act shall be compoundable. \S~147, Negotiable Instruments Act. Offences to be compoundable.}
-
-\begin{longtable}{@{}lrrr@{}}
- \caption{Contested cases}\label{tab:cont_yearWise}\\
-\toprule
-\multirow{2}{*}{Year} & \multirow{2}{*}{Total NI Act cases} & \multicolumn{2}{c}{Contested cases}\\
-\cmidrule{3-4}
-&& Number of cases & Percentage \\
-\midrule\endhead
-2014 & 6684 & 2171 & 32.5 \\
-2015 & 7324 & 1944 & 26.5 \\
-2016 & 10634 & 1822 & 17.1 \\
-2017 & 12053 & 1478 & 12.3 \\
-2018 & 11454 & 868 & 7.6 \\
-\bottomrule
-\end{longtable}
-
-We expected contested cases to take more days and more hearings to dispose than uncontested cases. The results, shown in Table \ref{tab:summary_results}, indicate that contested cases typically take 3 hearings more but 46 days less to dispose than uncontested cases. While the finding on the effect on the number of hearings was as expected, the latter finding regarding the effect on overall duration runs counter to our hypothesis.
+The results, shown in Table \ref{tab:summary_results}, indicate that contested cases typically take 3 hearings more but 46 days less to dispose than uncontested cases. While the finding on the effect on the number of hearings was as expected, the latter finding regarding the effect on overall duration runs counter to our hypothesis.
 
 In 1925, the Civil Justice Committee noted that there is a temptation to hold back the heavier \textit{contested} suits and devote attention to the lighter ones.\footcite{cg1925_civiljustice} Close to a hundred years later, this conjecture may not hold for cases under the \gls{ni}. The results imply that courts efficiently dispose cases when both parties participate in the proceedings by scheduling successive hearings in a shorter time than when the matter is uncontested.
 
@@ -350,6 +218,50 @@ For example, if the problem of accused persons not appearing before the court is
 As per the \gls{njdg}, as of January 2022, there were 3,57,72,846 total original pending cases in subordinate courts in India. Assuming the proportions and ratios of our analysis and results hold good for the country as a whole, 13.2\% of these cases would relate to the \gls{ni}, which would amount to 47,39,902 cases. To put the numbers in the table into context, ensuring the presence of the accused can lead to reducing 2,32,58,415 hearings across courts in the country.\footnote{This assumes the proportion of the distribution of case characteristics holds good for the country as a whole.} Similarly, if all \gls{ni} cases are disposed summarily, courts across the country can avoid 90,86,676 hearings. Further, if none of the cases had jurisdictional issues, 78,48,857 hearings could be avoided. While the Supreme Court has provided clarity on the procedure to be followed when the accused does not ordinarily reside within a court's jurisdiction, there is a need for further analysis on how to reduce such cases in the first place, since parties need not ordinarily reside and have bank accounts within the jurisdiction of the same court.
 
 In the same vein, referring \gls{ni} cases to mediation could be adding 34,40,884 hearings to the courts across the country. All these hearings can be avoided if the court tried and disposed of these cases. This is significant and highlights why it is necessary to support policy decisions with robust empirical studies.
+
+\subsection{Robustness checks}
+
+To test the robustness of our findings, we do two additional checks. First, in Appendix \ref{sec:survivalModel}, we check if our results are consistent across time and across States. Second, we run the hazard models considering both disposed and pending cases to confirm the effect of case characteristics.
+
+\section{Effect of NI 138 Amendment, 2015}
+
+Then we use Kaplan-Meier non-parametric statistics to estimate a survival model for our cases. A survival probability is calculated for each interval as follows: the number of observations that survived (that did not face the event), divided by the number of observations that were at the risk of facing the event \autocite{rich2010practical}. In our case, this will be the number of cases that did not get closed divided by the number of cases that could have been closed. The Kaplan Meier plots, thus, depict the estimated probability of survival at each point in time or the probability of the case not getting completed at each point in time.
+
+While we had not originally set out to test the effectiveness of the amendments to the NI Act, our dataset allowed us to test the effect of the year (using fixed-effects regression) on the total duration of the case and total hearings required to dispose. This can serve as a suitable proxy for the effect of the amendment itself. The results --- given in Table \ref{tab:amendments_effect} --- show that there was a drastic decrease in the total case duration and the number of hearings required to dispose them for cases filed in 2017 and 2018. This indicates that the amendments to the NI Act made in 2015 --- to clarify the geographical jurisdictions --- may have had an impact on reducing the case duration and number of hearings to dispose cheque dishonour cases. This further confirms our result that solving jurisdiction related issues can reduce the overall duration of the NI Act cases.
+
+\begin{table}
+ \centering
+ \caption{Effect of NI Act amendments on case
+ disposal}\label{tab:amendments_effect}
+ \footnotesize
+ \begin{tabular}{@{\extracolsep{5pt}}lcc}
+ \\[-1.8ex] 
+ \hline \\[-1.8ex] 
+ \multirow{2}{*}{Year} & \multicolumn{2}{c}{\textit{Dependent variable}} \\ 
+ \cline{2-3} 
+ \\[-1.8ex] & Disposal days & No. of hearings \\ 
+ \hline \\[-1.8ex] 
+ D(2015) & 24.202$^{***}$ & 1.020$^{***}$ \\ 
+ & (6.902) & (0.182) \\ 
+ & & \\ 
+ D(2016) & 6.439 & $-$0.188 \\ 
+ & (6.652) & (0.176) \\ 
+ & & \\ 
+ D(2017) & $-$106.686$^{***}$ & $-$2.475$^{***}$ \\ 
+ & (6.612) & (0.175) \\ 
+ & & \\ 
+ D(2018) & $-$197.606$^{***}$ & $-$4.118$^{***}$ \\ 
+ & (6.955) & (0.184) \\
+ \hline \\[-1.8ex] 
+ Observations & 35,427 & 35,427 \\ 
+ R$^{2}$ & 0.241 & 0.368 \\ 
+ Adjusted R$^{2}$ & 0.241 & 0.367 \\ 
+ \hline \\[-1.8ex] 
+ \textit{Note:} & \multicolumn{2}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+ \end{tabular} 
+\end{table}
+
+
 
 %%% Local Variables:
 %%% mode: latex
