@@ -2,31 +2,7 @@ We use the fixed-effects regression model to estimate the effect size of these c
 
 While hazard models, on the lines of \textcite{datta2017_itatDelays}, would be an ideal choice to use in such an analysis, we chose the fixed-effects model due to the peculiarities of our data. Case-characteristics for pending cases cannot be reliably detected because orders for those cases are not available in most instances. Further, given that most cases in our data-set are disposed, we did not expect significantly different results from using a fixed-effects model. Finally, a fixed-effects model gives coefficients that can be easily interpreted, whereas hazard models yield probabilities for a case to conclude after a given duration. The coefficient from the fixed-effects model is therefore easier to for policy reform than the results of a hazard model.
 
-Table \ref{tab:summary_results} shows the summary of results, and Table \ref{tab:disposal_regression} shows the results of the fixed effects regression to predict the effects on total case duration (in days). The State in which the case is filed has a large and statistically significant effect on the case duration. Controlling for the State-level effects, all but one of the selected case characteristics significantly increase the case duration.
-
-{\footnotesize \begin{longtable}{@{}p{2.5cm}rrrrr}
- \caption{Summary of results}\label{tab:summary_results}\\
- \toprule
- \textbf{Characteristic} & \multicolumn{1}{p{2cm}}{\textbf{Number of cases}} &
- \multicolumn{1}{p{2cm}}{\textbf{As \% of NI Act cases}}
- & \multicolumn{1}{p{2cm}}{\textbf{As \% of total cases}}
- & \multicolumn{1}{p{2cm}}{\textbf{Effect on days to dispose}} &
- \multicolumn{1}{p{2cm}}{\textbf{Effect on hearings to dispose}}
- \\
- \midrule
- Non appearance of the accused & 33625 & 69.8\% & 9.2\% & +213 & +7.0 \\ \midrule
- Conversion to summons trial & 12876 & 26.7\% & 3.5\% & +111 & +7.2 \\ \midrule
- Mediation & 10711 & 22.2\% & 2.9\% & +108 & +3.3 \\ \midrule
- Jurisdictional issues & 14098 & 29.2\% & 3.9\% & +287 & +5.7 \\ \midrule
- Multiplicity of proceedings & 2010 & 4.2\% & 0.6\% & +171 & +10.0 \\ \midrule
- Contested & 8283 & 17.2\% & 2.3\% & --46 & +2.9 \\ \midrule
- Total & 48191 & 100.0\% & 13.2\% & N/A & N/A \\
- \bottomrule
- \\
- \multicolumn{6}{l}{{\footnotesize \emph{Note: `+' sign
- indicates an increase, while `-' sign indicates decrease.}}}\\
-\end{longtable}
-}
+Table \ref{tab:disposal_regression} shows the results of the fixed effects regression to predict the effects on total case duration (in days). The State in which the case is filed has a large and statistically significant effect on the case duration. Controlling for the State-level effects, all but one of the selected case characteristics significantly increase the case duration.
 
 \begin{table}
 \centering
@@ -106,6 +82,32 @@ As with the total duration to dispose the cases, the State in which the case is 
  \hline \\[-1.8ex] 
  \textit{Note:} & \multicolumn{7}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
 \end{longtable}}
+
+Table \ref{tab:summary_results} shows the summary of results.
+
+{\footnotesize \begin{longtable}{@{}p{2.5cm}rrrrr}
+ \caption{Summary of results}\label{tab:summary_results}\\
+ \toprule
+ \textbf{Characteristic} & \multicolumn{1}{p{2cm}}{\textbf{Number of cases}} &
+ \multicolumn{1}{p{2cm}}{\textbf{As \% of NI Act cases}}
+ & \multicolumn{1}{p{2cm}}{\textbf{As \% of total cases}}
+ & \multicolumn{1}{p{2cm}}{\textbf{Effect on days to dispose}} &
+ \multicolumn{1}{p{2cm}}{\textbf{Effect on hearings to dispose}}
+ \\
+ \midrule
+ Non appearance of the accused & 33625 & 69.8\% & 9.2\% & +213 & +7.0 \\ \midrule
+ Conversion to summons trial & 12876 & 26.7\% & 3.5\% & +111 & +7.2 \\ \midrule
+ Mediation & 10711 & 22.2\% & 2.9\% & +108 & +3.3 \\ \midrule
+ Jurisdictional issues & 14098 & 29.2\% & 3.9\% & +287 & +5.7 \\ \midrule
+ Multiplicity of proceedings & 2010 & 4.2\% & 0.6\% & +171 & +10.0 \\ \midrule
+ Contested & 8283 & 17.2\% & 2.3\% & --46 & +2.9 \\ \midrule
+ Total & 48191 & 100.0\% & 13.2\% & N/A & N/A \\
+ \bottomrule
+ \\
+ \multicolumn{6}{l}{{\footnotesize \emph{Note: `+' sign
+ indicates an increase, while `-' sign indicates decrease.}}}\\
+\end{longtable}
+}
 
 The results for each of the case characteristics are discussed in detail in the following sub-sections.
 
@@ -221,7 +223,7 @@ In the same vein, referring \gls{ni} cases to mediation could be adding 34,40,88
 
 \subsection{Robustness checks}
 
-To test the robustness of our findings, we do two additional checks. First, in Appendix \ref{sec:survivalModel}, we check if our results are consistent across time and across States. Second, we run the hazard models considering both disposed and pending cases to confirm the effect of case characteristics.
+To test the robustness of our findings, we do two additional checks. First, in Appendix \ref{sec:survivalModel}, we check if our results are consistent across time and across States. Second, we run the hazard models considering both disposed and pending cases to reconfirm the effect of each case characteristics.
 
 \section{Effect of NI 138 Amendment, 2015}
 
