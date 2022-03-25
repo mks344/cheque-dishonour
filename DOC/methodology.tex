@@ -10,8 +10,6 @@ We first drew a random sample of 100,000 cases filed between 1st January 2014 an
 
 Based on the criteria above, of the 29 States (including Jammu and Kashmir) and 7 Union Territories, our final sample covers 8 States and 2 Union Territories, shown in Table \ref{tab:sample_desc}. For details concerning the selection, see appendix \ref{sec:sample_selection}.
 
-For these 10 States and Union Territories, we drew another random sample of 500,000 cases filed between 1st January 2014 and 31st December 2018 from the Development Data Labs database.\footcite{devdatalabs2021_eCourtsData} We then attempted to download case details for these 500,000 cases. We were able to successfully download case details for 4,68,855 cases. We removed cases from District and Sessions courts since these courts hear appeals. This study attempts to analyse original matters. This gave a sample of 3,63,720 cases. As with the preliminary analysis, we used pattern-matching based on regular expressions to identify cases related to \gls{ni}. In total, our sample has 48,149 \gls{ni} cases. We manually checked the NI Act classification for approximately 1700 cases from the sample of 3,63,720 to check for erroneous classification. We found 1 false positive and no false negatives.\footnote{The false positive was because, for one case in Haryana, the court had dumped all the judgments issued on that date of disposal in the PDF file containing the order. As a result, the text for an actual NI Act case (along with all other cases disposed on that day) was erroneously included in the PDF of the judgment of that case. We further checked for similar erroneous data and found one more instance from the same court. However, none of the judgments in the PDF nor the case itself was related to NI Act. So effectively, it was correctly classified.} However, the data limitation above also limits our ability to reliably check for false negatives. Table \ref{tab:sample_desc} shows a summary of the sample. As shown, check dishonour cases in India represent approximately 13.2\% of courts' workload (pending and disposed). This number could be underestimated because orders cannot be parsed in approximately 36\% of the cases in our sample. Some may be NI Act cases, even though the Act Name field does not say so.
-
 {\footnotesize \begin{longtable}{@{}lrrr|r@{}}
 \caption{Sample description}
 \label{tab:sample_desc}\\
@@ -32,6 +30,8 @@ Punjab & 5885 & 24739 & 19.2 & 30624\\
 \textbf{Total} & \textbf{48149} & \textbf{315571} & \textbf{13.2} & \textbf{363720}\\ \bottomrule
 \end{longtable}
 }
+
+For these 10 States and Union Territories, we drew another random sample of 500,000 cases filed between 1st January 2014 and 31st December 2018 from the Development Data Labs database.\footcite{devdatalabs2021_eCourtsData} We then attempted to download case details for these 500,000 cases. We were able to successfully download case details for 4,68,855 cases. We removed cases from District and Sessions courts since these courts hear appeals and not the original matters. This gave a sample of 3,63,720 cases. As with the preliminary analysis, we used pattern-matching based on regular expressions to identify cases related to \gls{ni}. In total, our sample has 48,149 \gls{ni} cases. We manually checked the NI Act classification for approximately 1700 cases from the sample of 3,63,720 to check for erroneous classification. We found 1 false positive and no false negatives.\footnote{The false positive was because, for one case in Haryana, the court had dumped all the judgments issued on that date of disposal in the PDF file containing the order. As a result, the text for an actual NI Act case (along with all other cases disposed on that day) was erroneously included in the PDF of the judgment of that case. We further checked for similar erroneous data and found one more instance from the same court. However, none of the judgments in the PDF nor the case itself was related to NI Act. So effectively, it was correctly classified.} However, the data limitation above also limits our ability to reliably check for false negatives. Table \ref{tab:sample_desc} shows a summary of the sample. As shown, check dishonour cases in India represent approximately 13.2\% of courts' workload (pending and disposed). This number could be underestimated because orders cannot be parsed in approximately 36\% of the cases in our sample. Some may be NI Act cases, even though the Act Name field does not say so.
 
 Table \ref{tab:state_disposal} shows the number of disposed and pending cases state-wise and the median time taken to dispose cases. According to \S~143(3) of the \gls{ni}, courts are required to, as far as reasonably possible, complete NI Act cases within six months, i.e. 180 days. However, as the table shows, the median time taken to dispose these cases is above the recommended limit in all states. Of the 37,479 disposed cases in the sample, 10,171 --- i.e. 27\% cases --- were disposed within the prescribed limit of six months.
 
@@ -99,15 +99,9 @@ Total & 37469 & 10680 & 48149 \\
 \bottomrule
 \end{longtable}
 
-\subsection{Approach to analysis} \label{sec:approach-analysis}
+%\subsection{Approach to analysis} \label{sec:approach-analysis}
 
-Our objective is two-fold, to examine whether the interventions proposed by the Amicus Curiae are likely to affect the duration of cheque-dishonour cases, and if so, what is the magnitude of the effect. To that end, we first identified cases with specific characteristics that are thought to increase the duration of a cheque-dishonour case. We then used a fixed-effects regression model to estimate the effect size of these characteristics on the total duration of the case. For the empirical analysis, we only used the 37,498 disposed cases.
-
-A fixed-effects regression model is an estimation technique that allows one to control for time-invariant unobserved variables that can be correlated with the observed characteristics, thus allowing us to estimate the effect size of identified (observed) characteristics on the total duration of cases. Notably, we only rely on disposed cases since pending cases in our data often do not have interim orders. By definition, they also do not have a final order. Thus, including such cases in the estimation can lead to higher uncertainty.
-
-While hazard models, on the lines of \textcite{datta2017_itatDelays}, would be an ideal choice to use in such an analysis, we chose the fixed-effects model due to the peculiarities of our data. Case-characteristics for pending cases cannot be reliably detected because orders for those cases are not available in most instances. Further, given that most cases in our data-set are disposed, we did not expect significantly different results from using a fixed-effects model. Finally, a fixed-effects model gives coefficients that can be easily interpreted, whereas hazard models yield probabilities for a case to conclude after a given duration. The coefficient from the fixed-effects model is therefore easier to for policy reform than the results of a hazard model.
-
-To test the robustness of our findings, we do two additional checks. First, in Appendix \ref{sec:survivalModel}, we check if our results are consistent across time and across States. Then we use Kaplan-Meier non-parametric statistics to estimate a survival model for our cases. A survival probability is calculated for each interval as follows: the number of observations that survived (that did not face the event), divided by the number of observations that were at the risk of facing the event \autocite{rich2010practical}. In our case, this will be the number of cases that did not get closed divided by the number of cases that could have been closed. The Kaplan Meier plots, thus, depict the estimated probability of survival at each point in time or the probability of the case not getting completed at each point in time.
+Our objective is two-fold, to examine whether the interventions proposed by the Amicus Curiae are likely to affect the duration of cheque-dishonour cases, and if so, what is the magnitude of the effect. To that end, we first identified cases with specific characteristics that are thought to increase the duration of a cheque-dishonour case. 
 
 \subsection{Identifying case characteristics} \label{sec:text-mining}
 
@@ -116,28 +110,143 @@ To identify cases with the characteristics of interest, we analysed the interim 
 \begin{description}
 \item [Non-appearance by the accused] -- We looked for references to \S~72 \gls{crpc},\footnote{\S~72, Code of Criminal Procedure. Warrants to whom directed.} and terms like - accused not available / out of station / absconding / not present / absent, or that accused’s presence could not be secured, or references to the issuance of a bailable / non-bailable warrant to secure the presence of the accused. In addition to this, we looked at references to non-appearance, absconsion, bailable / non-bailable warrants in the data on the purpose of hearings.
 
+Table \ref{tab:nonAppearance_yearWise} shows the number of cases in the sample in which the accused failed to appear in at least one of the hearings. It appears that this is a widespread occurrence, and consistently so, over the entire observation period.
+
+\begin{longtable}{@{}lrrr@{}}
+ \caption{Cases where the accused was absent for at least one hearing}\label{tab:nonAppearance_yearWise}\\
+\toprule
+\multirow{2}{*}{Year} & \multirow{2}{*}{Total NI Act cases} & \multicolumn{2}{c}{Non Appearance}\\
+\cmidrule{3-4}
+&& Number of cases & Percentage \\
+\midrule\endhead
+2014 & 6684 & 4302 & 64.4 \\
+2015 & 7324 & 5241 & 71.6 \\
+2016 & 10634 & 7527 & 70.8 \\
+2017 & 12053 & 8628 & 71.6 \\
+2018 & 11454 & 7927 & 69.2 \\
+\bottomrule
+\end{longtable}
+
+We expected cases with incidences of absence by the accused would take more days and more hearings to dispose. 
+
 \item[]
 
 \item [Jurisdiction issue] -- We looked for references to lack of jurisdiction / lack of proper jurisdiction / beyond jurisdiction, references to \S~142 of the \gls{ni},\footnote{\S~142, Negotiable Instruments Act. Cognisance of offences.} and citations of specific cases like \citetitle{sc2014_dhanuka},\footcite{sc2014_dhanuka} and \citetitle{sc2016_carbon}.\footcite{sc2016_carbon} Additionally, we looked at cases that were marked transferred from one court to another or were observed to be transferred in the hearings or disposal data, since a vast majority of such transfers are due to jurisdictional issues.
 
-\item[]
+Table \ref{tab:jurisdiction_yearWise} shows the number of cases in the sample in which there was a jurisdictional issue. The proportion of such cases as a percentage of the total, though significant, has fallen slightly over the observation period. The increase in cases with jurisdictional issues in 2016 is likely to be a consequence of the amendment in 2015, which resulted in more cases being transferred to courts that would now have appropriate jurisdiction.
 
-\item [Case referred to mediation] -- We looked for references to the case being referred to mediation / Lok Adalat / \gls{adr}, or references to the matter being settled mutually, or compromised. We also looked at references to the cases being sent to mediation in the hearings data, and references to the case concluding in the Lok Adalat or being settled mutually, or the parties reaching a compromise.
+\begin{longtable}{@{}lrrr@{}}
+ \caption{Cases with jurisdictional issues}\label{tab:jurisdiction_yearWise}\\
+ \toprule
+ \multirow{2}{*}{Year} & \multirow{2}{*}{Total NI Act cases} & \multicolumn{2}{c}{Jurisdictional issue}\\
+ \cmidrule{3-4}
+ && Number of cases & Percentage \\
+ \midrule\endhead
+ 2014 & 6684 & 2089 & 31.3 \\
+ 2015 & 7324 & 2229 & 30.4 \\
+ 2016 & 10634 & 3520 & 33.1 \\
+ 2017 & 12053 & 3360 & 27.9 \\
+ 2018 & 11454 & 2900 & 25.3 \\
+ \bottomrule
+\end{longtable}
 
-\item[]
-
-\item [Multiplicity of proceedings] -- We looked for references to multiple cheques being dishonoured and multiple transactions, and references to \S\S~219 and 220 of the \gls{crpc}.\footnote{\S\S~219 and 220, Code of Criminal Procedure. Three offences of same kind within year may be charged together; Trial for more than one offence.}
+We expected cases with jurisdictional issues to take more days and more hearings to dispose. 
 
 \item[]
 
 \item [Case being converted to a summons trial] -- We looked for references to the case being tried under \S~143 of the NI Act,\footnote{\S~143, Negotiable Instruments Act. Power of Court to try cases summarily.} or \S\S~262, 263, 264 or 265 of the \gls{crpc},\footnote{\S\S~262, 263, 264 or 265, Code of Criminal Procedure. Procedure for summary trials; Record in summary trials; Judgement in cases tried summarily; Language of record and judgment.} or references to the case being tried summarily. These cases were marked as not summons trials. Cases where these were deemed not to apply, or the case was being conducted normally, or it is undesirable to try the case summarily, or the sections above not being applicable were marked as summons trials. Further, cases, where any hearing mentioned summons trial as the purpose, were marked as summons cases.
 
+Table \ref{tab:summons_yearWise} shows the number of cases in the sample in which the case was converted from a summary trial to a summons trial. The proportion of such cases as a percentage of the total has grown over the observation period.
+
+\begin{longtable}{@{}lrrr@{}}
+ \caption{Cases converted to summons trials}\label{tab:summons_yearWise}\\
+ \toprule
+ \multirow{2}{*}{Year} & \multirow{2}{*}{Total NI Act cases} & \multicolumn{2}{c}{Summons trial}\\
+ \cmidrule{3-4}
+ && Number of cases & Percentage \\
+ \midrule\endhead
+ 2014 & 6684 & 1251 & 18.7 \\
+ 2015 & 7324 & 1880 & 25.7 \\
+ 2016 & 10634 & 2814 & 26.5 \\
+ 2017 & 12053 & 3542 & 29.4 \\
+ 2018 & 11454 & 3389 & 29.6 \\
+ \bottomrule
+\end{longtable}
+
+We expected cases converted to summons trial to take more days and more hearings to dispose.
+
+\item [Case referred to mediation] -- We looked for references to the case being referred to mediation / Lok Adalat / \gls{adr}, or references to the matter being settled mutually, or compromised. We also looked at references to the cases being sent to mediation in the hearings data, and references to the case concluding in the Lok Adalat or being settled mutually, or the parties reaching a compromise.
+
+Table \ref{tab:mediation_yearWise} shows the number of cases in the sample in which the accused failed to appear in at least one of the hearings. The proportion of such cases is considerable over the entire observation period.
+
+\begin{longtable}{@{}lrrr@{}}
+ \caption{Cases referred to mediation}\label{tab:mediation_yearWise}\\
+ \toprule
+ \multirow{2}{*}{Year} & \multirow{2}{*}{Total NI Act cases} & \multicolumn{2}{c}{Mediation}\\
+ \cmidrule{3-4}
+ && Number of cases & Percentage \\
+ \midrule\endhead
+ 2014 & 6684 & 997 & 14.9 \\
+ 2015 & 7324 & 1521 & 20.8 \\
+ 2016 & 10634 & 2609 & 24.5 \\
+ 2017 & 12053 & 3100 & 25.7 \\
+ 2018 & 11454 & 2484 & 21.7 \\
+ \bottomrule
+\end{longtable}
+
+\item[]
+
+\item [Multiplicity of proceedings] -- We looked for references to multiple cheques being dishonoured and multiple transactions, and references to \S\S~219 and 220 of the \gls{crpc}.\footnote{\S\S~219 and 220, Code of Criminal Procedure. Three offences of same kind within year may be charged together; Trial for more than one offence.}
+
+Table \ref{tab:mult_yearWise} shows the number of cases in the sample in which there was a multiplicity of proceedings. As a percentage of the total, the proportion of such cases is small. However, as \Cref{tab:state_multiplicity} shows, the burden caused due to multiplicity varies across States.
+
+\begin{longtable}{@{}lrrr@{}}
+ \caption{Cases with a multiplicity of proceedings}\label{tab:mult_yearWise}\\
+\toprule
+\multirow{2}{*}{Year} & \multirow{2}{*}{Total NI Act cases} & \multicolumn{2}{c}{Multiplicity of proceedings}\\
+\cmidrule{3-4}
+&& Number of cases & Percentage \\
+\midrule\endhead
+2014 & 6684 & 259 & 3.9 \\
+2015 & 7324 & 382 & 5.2 \\
+2016 & 10634 & 544 & 5.1 \\
+2017 & 12053 & 515 & 4.3 \\
+2018 & 11454 & 310 & 2.7 \\
+\bottomrule
+\end{longtable}
+
+We expected cases with a multiplicity of proceedings to take more days and more hearings to dispose.
+
+\item[]
+
+\item [Contested cases] -- {\color{red} Add text here}
+
+Table \ref{tab:mult_yearWise} shows the number of cases in the sample which were contested by the accused. The proportion of such cases is significant but appears to have declined over the years. This may be due to an increased tendency of parties to compound a case.\footnote{\S~147 of the Negotiable Instruments Act provides that every offence punishable under the Act shall be compoundable. \S~147, Negotiable Instruments Act. Offences to be compoundable.}
+
+\begin{longtable}{@{}lrrr@{}}
+ \caption{Contested cases}\label{tab:cont_yearWise}\\
+\toprule
+\multirow{2}{*}{Year} & \multirow{2}{*}{Total NI Act cases} & \multicolumn{2}{c}{Contested cases}\\
+\cmidrule{3-4}
+&& Number of cases & Percentage \\
+\midrule\endhead
+2014 & 6684 & 2171 & 32.5 \\
+2015 & 7324 & 1944 & 26.5 \\
+2016 & 10634 & 1822 & 17.1 \\
+2017 & 12053 & 1478 & 12.3 \\
+2018 & 11454 & 868 & 7.6 \\
+\bottomrule
+\end{longtable}
+
+We expected contested cases to take more days and more hearings to dispose than uncontested cases.
+
+\item[]
+
 \end{description}
 
 These case characteristics were represented as binary variables. For example, if the parties did not appear for a hearing in a given case, the Non-appearance variable takes the value 1. If the parties appeared at every hearing, we would mark it as 0. Similarly, for the Summons Trial variable, if the case was converted to a summons trial, it is marked as 1. Otherwise, it is marked as 0.
 
-\subsection{Overview of the data}
-\label{sec:overview-data}
+%\subsection{Overview of the data} \label{sec:overview-data}
 
 Table \ref{tab:case_chars} shows the State-wise number of cases in which we were able to identify characteristics of interest. The row totals are not expected to add up to the total cases in the respective state in the sample, because some cases can have more than one of the selected characteristics. As an illustration, a case may involve the dishonour of multiple cheques and be referred to mediation.
 
