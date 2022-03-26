@@ -2,6 +2,19 @@ We use the fixed-effects regression model to estimate the effect size of these c
 
 While hazard models, on the lines of \textcite{datta2017_itatDelays}, would be an ideal choice to use in such an analysis, we chose the fixed-effects model due to the peculiarities of our data. Case-characteristics for pending cases cannot be reliably detected because orders for those cases are not available in most instances. Further, given that most cases in our data-set are disposed, we did not expect significantly different results from using a fixed-effects model. Finally, a fixed-effects model gives coefficients that can be easily interpreted, whereas hazard models yield probabilities for a case to conclude after a given duration. The coefficient from the fixed-effects model is therefore easier to for policy reform than the results of a hazard model.
 
+To examine the impact of case characteristics on case duration, we rely on two different measures: (1) Duration of the case (in days) and (2) Number of hearings required to dispose of. We perform a multivariate analysis: we regress the performance indicators (i.e., duration of the case and the number of hearings required to dispose of the case) on several potential explanatory variables. We also control for State and year fixed effects. For each performance measure, we estimate the following fixed effect regression model:
+
+\begin{equation}\label{eq:fe1}
+\begin{split}
+Duration_i \ & or \ Number \ of \ hearings_i \\
+& = \beta_1 \ D_1(Non-appearance_i) + \beta_2 \ D_2(Jurisdiction \ Issue_i) + \beta_3 \ D_3(Mediation_i) \\
+& + \beta_4 \ D_4(Multiplicity_i) + \beta_5 \ D_5(Summons_i) + \beta_6 \ D_6(Contested_i) \\
+& + \alpha_s + Y_t + \epsilon_{ist}
+\end{split}
+\end{equation}
+
+where $D_1$ is a dummy variable equal to 1 if the accused was not available / out of station/absconding or absent due to other reasons, $D_2$ is a dummy variable equal to 1 if the case refers to jurisdiction issues, $D_3$ is a dummy variable which takes the value 1 if the case was referred for mediation, $D_4$ is a dummy variable equal to 1 if the case suffers from a multiplicity of proceedings, $D_5$ is a dummy variable which takes the value 1 if the case is marked as summons trial, and $D_6$ is a dummy variable equal to 1 if the case was contested. We use the State and year dummies ($\alpha_s$ and $Y_t$ respectively) to control for the macro-economic reforms and environment.\footnote{We performed robustness checks to ascertain whether our choice of using state and year fixed-effects were sound. The results are presented in Appendix \ref{sec:consistency}. Both the state and the year of filing have a significant effect on the overall duration of the cases, and the number of hearings required to dispose them. This justifies our decision to control for state and year in our estimation of the effect of case characteristics.}
+
 Table \ref{tab:disposal_regression} shows the results of the fixed effects regression to predict the effects on total case duration (in days). The State in which the case is filed has a large and statistically significant effect on the case duration. Controlling for the State-level effects, all but one of the selected case characteristics significantly increase the case duration.
 
 \begin{table}
